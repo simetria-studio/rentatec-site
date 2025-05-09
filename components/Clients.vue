@@ -96,7 +96,7 @@
             <div class="client-card">
               <div class="client-card-inner">
                 <div class="client-logo-wrapper">
-                  <img src="/images/Kluber.png" alt="Kluber" class="client-image" />
+                  <img src="/images/kluber.png" alt="Kluber" class="client-image" />
                 </div>
                 <div class="client-overlay">
                   <div class="client-info">
@@ -138,7 +138,7 @@
             <div class="client-card">
               <div class="client-card-inner">
                 <div class="client-logo-wrapper">
-                  <img src="/images/CASEX.png" alt="CASEX" class="client-image" />
+                  <img src="/images/casex.png" alt="CASEX" class="client-image" />
                 </div>
                 <div class="client-overlay">
                   <div class="client-info">
@@ -152,7 +152,7 @@
             <div class="client-card">
               <div class="client-card-inner">
                 <div class="client-logo-wrapper">
-                  <img src="/images/Baricomp.png" alt="Baricomp" class="client-image" />
+                  <img src="/images/baricomp.png" alt="Baricomp" class="client-image" />
                 </div>
                 <div class="client-overlay">
                   <div class="client-info">
