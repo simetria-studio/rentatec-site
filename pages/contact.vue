@@ -121,109 +121,14 @@
             </div>
           </div>
 
-          <!-- Contact Form -->
+          <!-- Pipefy Form -->
           <div class="lg:col-span-8">
-            <div class="bg-white p-8 rounded-3xl shadow-soft">
-              <form @submit.prevent="handleSubmit" class="grid grid-cols-1 gap-y-6">
-                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
-                    <div class="mt-1 relative">
-                      <input 
-                        type="text" 
-                        name="name" 
-                        id="name" 
-                        v-model="formData.name"
-                        :class="{'border-red-300 focus:ring-red-500 focus:border-red-500': errors.name}"
-                        class="block w-full px-4 py-3 border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                        required
-                      >
-                      <p v-if="errors.name" class="mt-1 text-sm text-red-600">{{ errors.name }}</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <div class="mt-1">
-                      <input 
-                        type="email" 
-                        name="email" 
-                        id="email" 
-                        v-model="formData.email"
-                        :class="{'border-red-300 focus:ring-red-500 focus:border-red-500': errors.email}"
-                        class="block w-full px-4 py-3 border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                        required
-                      >
-                      <p v-if="errors.email" class="mt-1 text-sm text-red-600">{{ errors.email }}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Telefone</label>
-                    <div class="mt-1">
-                      <input 
-                        type="tel" 
-                        name="phone" 
-                        id="phone" 
-                        v-model="formData.phone"
-                        v-mask="'(##) #####-####'"
-                        :class="{'border-red-300 focus:ring-red-500 focus:border-red-500': errors.phone}"
-                        class="block w-full px-4 py-3 border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                        placeholder="(00) 00000-0000"
-                      >
-                      <p v-if="errors.phone" class="mt-1 text-sm text-red-600">{{ errors.phone }}</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label for="subject" class="block text-sm font-medium text-gray-700">Assunto</label>
-                    <div class="mt-1">
-                      <input 
-                        type="text" 
-                        name="subject" 
-                        id="subject" 
-                        v-model="formData.subject"
-                        :class="{'border-red-300 focus:ring-red-500 focus:border-red-500': errors.subject}"
-                        class="block w-full px-4 py-3 border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                        required
-                      >
-                      <p v-if="errors.subject" class="mt-1 text-sm text-red-600">{{ errors.subject }}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label for="message" class="block text-sm font-medium text-gray-700">Mensagem</label>
-                  <div class="mt-1">
-                    <textarea 
-                      name="message" 
-                      id="message" 
-                      rows="4" 
-                      v-model="formData.message"
-                      :class="{'border-red-300 focus:ring-red-500 focus:border-red-500': errors.message}"
-                      class="block w-full px-4 py-3 border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
-                      required
-                    ></textarea>
-                    <p v-if="errors.message" class="mt-1 text-sm text-red-600">{{ errors.message }}</p>
-                  </div>
-                </div>
-
-                <div>
-                  <button 
-                    type="submit"
-                    :disabled="isSubmitting"
-                    class="inline-flex justify-center w-full px-6 py-4 text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 border border-transparent rounded-xl shadow-sm hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 transition-all transform hover:scale-[1.02]"
-                  >
-                    <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    {{ isSubmitting ? 'Enviando...' : 'Enviar Mensagem' }}
-                  </button>
-                </div>
-              </form>
+            <div class="bg-white p-8 rounded-3xl shadow-soft h-full">
+              <iframe 
+                src="https://app.pipefy.com/public/form/kDESehIn" 
+                frameborder="0" 
+                class="w-full min-h-[800px]"
+              ></iframe>
             </div>
           </div>
         </div>
