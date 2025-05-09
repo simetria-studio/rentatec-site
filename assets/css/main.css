@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-rgb: 48, 86, 211;
+  --color-primary-dark-rgb: 34, 61, 150;
+  --color-secondary-rgb: 113, 65, 177;
+  --color-secondary-dark-rgb: 79, 45, 124;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply text-base text-body-color;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-dark;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center py-3 px-7 text-base font-medium text-center transition rounded-lg;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary hover:bg-opacity-90;
+  }
+
+  .btn-outline {
+    @apply text-primary border border-primary hover:bg-primary hover:text-white;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-dark sm:text-4xl md:text-[45px];
+  }
+
+  .section-subtitle {
+    @apply text-base text-body-color;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  }
+}
+
+/* Animações */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-dark;
+}
