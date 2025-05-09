@@ -110,7 +110,7 @@
             <div class="client-card">
               <div class="client-card-inner">
                 <div class="client-logo-wrapper">
-                  <img src="/images/jusbrasil.png" alt="Jusbrasil" class="client-image" />
+                  <img src="/images/Jusbrasil.png" alt="Jusbrasil" class="client-image" />
                 </div>
                 <div class="client-overlay">
                   <div class="client-info">
