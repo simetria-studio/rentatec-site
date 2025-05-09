@@ -268,7 +268,8 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
-import { vMask } from 'vue-the-mask'
+import pkg from 'vue-the-mask'
+const { vMask } = pkg
 
 const formData = ref({
   name: '',
