@@ -31,20 +31,10 @@
           </div>
         </div>
 
-        <!-- Dashboard Placeholder UI -->
+        <!-- Dashboard Image -->
         <div class="reveal-element mx-auto max-w-5xl px-2">
-          <div class="aspect-video bg-slate-50 rounded-2xl border border-slate-200 shadow-2xl flex flex-col items-center justify-center p-4 md:p-8 relative overflow-hidden group">
-            <div class="absolute inset-0 bg-gradient-to-br from-white via-transparent to-slate-100 opacity-50"></div>
-            <!-- UI Schematic -->
-            <div class="w-full h-full flex flex-col gap-4 md:gap-6 opacity-30">
-              <div class="h-6 md:h-8 w-1/4 bg-slate-200 rounded-md"></div>
-              <div class="grid grid-cols-3 gap-2 md:gap-4">
-                <div class="h-20 md:h-32 bg-slate-200 rounded-xl"></div>
-                <div class="h-20 md:h-32 bg-slate-200 rounded-xl"></div>
-                <div class="h-20 md:h-32 bg-slate-200 rounded-xl"></div>
-              </div>
-              <div class="flex-1 bg-slate-200 rounded-xl"></div>
-            </div>
+          <div class="rounded-2xl border border-slate-200 shadow-2xl overflow-hidden group bg-white">
+            <img src="~/assets/images/dashinicial.png" alt="XERP Notas Dashboard" class="w-full h-auto transform group-hover:scale-[1.01] transition-transform duration-500" />
           </div>
         </div>
       </div>
@@ -154,18 +144,8 @@
           
           <!-- Visual Placeholder -->
           <div class="reveal-element lg:pl-10">
-            <div class="bg-slate-800/80 border border-slate-700 rounded-3xl p-6 md:p-10 shadow-3xl">
-              <div class="space-y-4">
-                <div class="h-4 w-1/3 bg-slate-700 rounded"></div>
-                <div class="space-y-2">
-                  <div v-for="i in 4" :key="i" class="h-10 w-full bg-slate-700/50 rounded-lg flex items-center px-4">
-                    <div class="h-2 w-1/2 bg-slate-600 rounded"></div>
-                  </div>
-                </div>
-                <div class="h-32 w-full bg-blue-500/10 border border-blue-500/20 rounded-xl flex items-center justify-center">
-                  <span class="text-blue-400/50 text-sm font-medium">Relatório de Auditoria</span>
-                </div>
-              </div>
+            <div class="rounded-3xl border border-slate-700 shadow-3xl overflow-hidden bg-slate-800">
+              <img src="~/assets/images/listagem.png" alt="XERP Notas Listagem" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-500" />
             </div>
           </div>
         </div>
