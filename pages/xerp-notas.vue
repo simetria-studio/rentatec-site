@@ -12,21 +12,23 @@
       
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div class="reveal-element">
-          <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold mb-6 border border-blue-100 uppercase tracking-wider">
-            Automação Fiscal e Tributária
+          <div class="inline-flex items-center px-5 py-2 rounded-full bg-blue-500/10 backdrop-blur-md text-blue-700 text-sm font-bold mb-6 border border-blue-200/50 uppercase tracking-wider shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-500">
+            ✨ Automação Fiscal e Tributária
           </div>
           <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-8 lg:px-20">
-            A Era da <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">Gestão Fiscal Autônoma</span>
+            A Era da <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-orange-600 to-red-600">Gestão Fiscal Autônoma</span>
           </h1>
           <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Elimine gargalos operacionais e erros de digitação. Nossa tecnologia captura, audita e integra <strong>100% dos seus documentos fiscais</strong> diretamente ao ERP, garantindo compliance e produtividade em tempo real.
+            Elimine gargalos operacionais e erros de digitação com <strong class="text-slate-900">Inteligência Artificial avançada</strong>. Nossa IA captura, audita e integra <strong class="text-slate-900">100% dos seus documentos fiscais</strong> diretamente ao ERP, garantindo compliance e produtividade em tempo real.
           </p>
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16 px-4">
-            <a href="#contact" class="w-full sm:w-auto px-10 py-4 bg-orange-600 text-white font-bold rounded-xl shadow-xl shadow-orange-600/20 hover:bg-orange-700 transition-all duration-300 transform hover:-translate-y-1 text-center">
-              Solicitar Demonstração
+            <a href="#contact" class="group relative w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl shadow-xl shadow-orange-600/30 hover:shadow-2xl hover:shadow-orange-600/40 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 text-center overflow-hidden">
+              <span class="relative z-10">Solicitar Demonstração</span>
+              <div class="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </a>
-            <a href="#features" class="w-full sm:w-auto px-10 py-4 border-2 border-slate-900 text-slate-900 font-bold rounded-xl hover:bg-slate-50 transition-all duration-300 text-center">
-              Como funciona?
+            <a href="#features" class="group w-full sm:w-auto px-10 py-4 border-2 border-slate-900 text-slate-900 font-bold rounded-2xl hover:bg-slate-900 hover:text-white transition-all duration-500 transform hover:-translate-y-1 text-center relative overflow-hidden">
+              <span class="relative z-10">Como funciona?</span>
+              <div class="absolute inset-0 bg-slate-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left -z-10"></div>
             </a>
           </div>
         </div>
@@ -40,25 +42,70 @@
       </div>
     </section>
 
-    <!-- Metrics Section -->
-    <section class="py-12 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="reveal-element p-6 border-l-4 border-orange-500 bg-slate-50 rounded-r-xl">
-            <div class="text-3xl font-extrabold text-slate-900 mb-2">98%</div>
-            <div class="text-sm text-slate-500 font-bold uppercase tracking-wide">Redução de Processo Manual</div>
+    <!-- Metrics Section - Liquid Glass 2026 -->
+    <section class="py-20 bg-gradient-to-b from-white via-slate-50/30 to-white relative overflow-hidden">
+      <!-- Decorative background -->
+      <div class="absolute inset-0 opacity-40">
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-orange-200/30 to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-blue-200/30 to-transparent rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <!-- Metric 1 - Orange -->
+          <div class="liquid-glass-card group relative p-8 rounded-3xl backdrop-blur-xl bg-white/60 border border-white/40 shadow-2xl shadow-orange-500/5 hover:shadow-orange-500/20 hover:-translate-y-3 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-1 h-16 bg-gradient-to-b from-orange-500 to-orange-600 rounded-full group-hover:h-20 transition-all duration-500"></div>
+                <div>
+                  <div class="text-6xl font-black bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-500 origin-left inline-block">98%</div>
+                </div>
+              </div>
+              <p class="text-xs uppercase tracking-wider font-bold text-slate-600 leading-relaxed">Redução de Processo Manual</p>
+            </div>
           </div>
-          <div class="reveal-element p-6 border-l-4 border-blue-500 bg-slate-50 rounded-r-xl">
-            <div class="text-3xl font-extrabold text-slate-900 mb-2">Zero</div>
-            <div class="text-sm text-slate-500 font-bold uppercase tracking-wide">Inconsistência de Dados</div>
+
+          <!-- Metric 2 - Blue -->
+          <div class="liquid-glass-card group relative p-8 rounded-3xl backdrop-blur-xl bg-white/60 border border-white/40 shadow-2xl shadow-blue-500/5 hover:shadow-blue-500/20 hover:-translate-y-3 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-1 h-16 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full group-hover:h-20 transition-all duration-500"></div>
+                <div>
+                  <div class="text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-500 origin-left inline-block">Zero</div>
+                </div>
+              </div>
+              <p class="text-xs uppercase tracking-wider font-bold text-slate-600 leading-relaxed">Inconsistência de Dados</p>
+            </div>
           </div>
-          <div class="reveal-element p-6 border-l-4 border-slate-900 bg-slate-50 rounded-r-xl">
-            <div class="text-3xl font-extrabold text-slate-900 mb-2">Real-time</div>
-            <div class="text-sm text-slate-500 font-bold uppercase tracking-wide">Atualização do ERP</div>
+
+          <!-- Metric 3 - Slate -->
+          <div class="liquid-glass-card group relative p-8 rounded-3xl backdrop-blur-xl bg-white/60 border border-white/40 shadow-2xl shadow-slate-500/5 hover:shadow-slate-500/20 hover:-translate-y-3 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-1 h-16 bg-gradient-to-b from-slate-700 to-slate-900 rounded-full group-hover:h-20 transition-all duration-500"></div>
+                <div>
+                  <div class="text-5xl font-black bg-gradient-to-r from-slate-800 to-slate-900 bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-500 origin-left inline-block">Real-time</div>
+                </div>
+              </div>
+              <p class="text-xs uppercase tracking-wider font-bold text-slate-600 leading-relaxed">Atualização do ERP</p>
+            </div>
           </div>
-          <div class="reveal-element p-6 border-l-4 border-orange-500 bg-slate-50 rounded-r-xl">
-            <div class="text-3xl font-extrabold text-slate-900 mb-2">100%</div>
-            <div class="text-sm text-slate-500 font-bold uppercase tracking-wide">Segurança Fiscal</div>
+
+          <!-- Metric 4 - Green -->
+          <div class="liquid-glass-card group relative p-8 rounded-3xl backdrop-blur-xl bg-white/60 border border-white/40 shadow-2xl shadow-green-500/5 hover:shadow-green-500/20 hover:-translate-y-3 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-1 h-16 bg-gradient-to-b from-green-500 to-green-600 rounded-full group-hover:h-20 transition-all duration-500"></div>
+                <div>
+                  <div class="text-6xl font-black bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-500 origin-left inline-block">100%</div>
+                </div>
+              </div>
+              <p class="text-xs uppercase tracking-wider font-bold text-slate-600 leading-relaxed">Segurança Fiscal</p>
+            </div>
           </div>
         </div>
       </div>
@@ -68,36 +115,86 @@
     <section id="features" class="py-24 bg-slate-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 reveal-element">
+          <div class="inline-flex items-center px-5 py-2 rounded-full bg-gradient-to-r from-orange-500/10 to-red-500/10 backdrop-blur-md text-orange-700 text-sm font-bold mb-6 border border-orange-200/50 uppercase tracking-wider shadow-lg shadow-orange-500/10">
+            🚀 Recursos Inteligentes
+          </div>
           <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">
             Inteligência Aplicada ao seu Negócio
           </h2>
           <p class="text-lg text-slate-600 max-w-2xl mx-auto">Desenvolvemos funcionalidades específicas para otimizar cada etapa do seu fluxo de entrada de notas.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-element">
-          <!-- Item 1 -->
-          <div class="p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300">
-            <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 reveal-element">
+          <!-- Item 1 - Captura via IA -->
+          <div class="feature-card group relative p-8 bg-gradient-to-br from-white to-orange-50/30 rounded-3xl border border-orange-100/50 backdrop-blur-sm overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-orange-500/30 transition-all duration-500">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">Captura via IA (OCR)</h3>
+              <p class="text-slate-600 leading-relaxed text-[15px]">Nossa Inteligência Artificial interpreta PDFs de serviços, comunicações e energia, convertendo dados não estruturados em informações prontas para o ERP.</p>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-4">Captura via IA (OCR)</h3>
-            <p class="text-slate-600 leading-relaxed">Nossa Inteligência Artificial interpreta PDFs de serviços, comunicações e energia, convertendo dados não estruturados em informações prontas para o ERP.</p>
           </div>
-          <!-- Item 2 -->
-          <div class="p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300">
-            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+
+          <!-- Item 2 - Monitoramento Oficial -->
+          <div class="feature-card group relative p-8 bg-gradient-to-br from-white to-blue-50/30 rounded-3xl border border-blue-100/50 backdrop-blur-sm overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-blue-500/30 transition-all duration-500">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Monitoramento Oficial</h3>
+              <p class="text-slate-600 leading-relaxed text-[15px]">Conexão nativa com SEFAZ e centenas de prefeituras para busca automática de NF-e, CT-e e NFS-e, eliminando a dependência do fornecedor.</p>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-4">Monitoramento Oficial</h3>
-            <p class="text-slate-600 leading-relaxed">Conexão nativa com SEFAZ e centenas de prefeituras para busca automática de NF-e, CT-e e NFS-e, eliminando a dependência do fornecedor.</p>
           </div>
-          <!-- Item 3 -->
-          <div class="p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300">
-            <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+
+          <!-- Item 3 - Conciliação de Pedidos -->
+          <div class="feature-card group relative p-8 bg-gradient-to-br from-white to-slate-50/30 rounded-3xl border border-slate-200/50 backdrop-blur-sm overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-slate-500/20 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-slate-500/30 transition-all duration-500">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-700 transition-colors duration-300">Conciliação de Pedidos</h3>
+              <p class="text-slate-600 leading-relaxed text-[15px]">Associe automaticamente as notas fiscais às Ordens de Compra (OC), validando preços, quantidades e impostos de forma instantânea.</p>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-4">Conciliação de Pedidos</h3>
-            <p class="text-slate-600 leading-relaxed">Associe automaticamente as notas fiscais às Ordens de Compra (OC), validando preços, quantidades e impostos de forma instantânea.</p>
+          </div>
+
+          <!-- Item 4 - Manifestação de Documentos -->
+          <div class="feature-card group relative p-8 bg-gradient-to-br from-white to-green-50/30 rounded-3xl border border-green-100/50 backdrop-blur-sm overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/20 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-green-500/30 transition-all duration-500">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600 transition-colors duration-300">Manifestação de Documentos</h3>
+              <p class="text-slate-600 leading-relaxed text-[15px]">O X-ERP Notas também realiza manifestação dos documentos, garantindo ciência e confirmação de operações com total conformidade fiscal.</p>
+            </div>
+          </div>
+
+          <!-- Item 5 - Busca Avançada -->
+          <div class="feature-card group relative p-8 bg-gradient-to-br from-white to-purple-50/30 rounded-3xl border border-purple-100/50 backdrop-blur-sm overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-500">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">Busca Avançada</h3>
+              <p class="text-slate-600 leading-relaxed text-[15px]">Localize rapidamente notas por modelo, CNPJ emitente, nome do emitente, número da nota e chave do documento eletrônico.</p>
+            </div>
+          </div>
+
+          <!-- Item 6 - Validação Multi-Setorial -->
+          <div class="feature-card group relative p-8 bg-gradient-to-br from-white to-indigo-50/30 rounded-3xl border border-indigo-100/50 backdrop-blur-sm overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/20 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-indigo-500/30 transition-all duration-500">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">Validação Multi-Setorial</h3>
+              <p class="text-slate-600 leading-relaxed text-[15px]">Processo de validação integrado entre setores de Compras, Fiscal, Financeiro e Recebimento, garantindo aprovação coordenada.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -107,8 +204,8 @@
     <section id="pricing" class="py-24 bg-gradient-to-b from-slate-50 to-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 reveal-element">
-          <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-orange-50 text-orange-700 text-sm font-semibold mb-6 border border-orange-100 uppercase tracking-wider">
-            Planos Flexíveis
+          <div class="inline-flex items-center px-5 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md text-blue-700 text-sm font-bold mb-6 border border-blue-200/50 uppercase tracking-wider shadow-lg shadow-blue-500/10">
+            💎 Planos Flexíveis
           </div>
           <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">
             Escolha o Plano Ideal para sua Empresa
@@ -308,45 +405,72 @@
 
         <!-- Trust Indicators -->
         <div class="mt-12 text-center reveal-element">
-          <p class="text-sm text-slate-500 mb-4">✓ Cancele quando quiser &nbsp;•&nbsp; ✓ Suporte técnico incluso</p>
+          <div class="flex flex-wrap justify-center items-center gap-6 text-slate-600">
+            <div class="flex items-center gap-2 group">
+              <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span class="text-sm font-medium">Cancele quando quiser</span>
+            </div>
+            <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+            <div class="flex items-center gap-2 group">
+              <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              </div>
+              <span class="text-sm font-medium">Suporte técnico incluso</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Operations Section -->
-    <section class="py-24 bg-slate-900 text-white overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-24 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden relative">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div class="reveal-element">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-8 leading-tight">
-              Visibilidade Total para a <span class="text-blue-400">Tomada de Decisão</span>
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 backdrop-blur-md text-blue-300 text-sm font-bold mb-6 border border-blue-400/30">
+              📈 Gestão Inteligente
+            </div>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-8 leading-tight" style="color: #fff;">
+              Visibilidade Total para a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Tomada de Decisão</span>
             </h2>
-            <div class="space-y-8">
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-6 h-6 mt-1 text-blue-400">
-                  <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <div class="space-y-6">
+              <div class="group flex gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all duration-300">
+                <div class="flex-shrink-0 w-8 h-8 mt-0.5">
+                  <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </div>
                 </div>
                 <div>
-                  <h4 class="text-lg font-bold mb-2">Auditoria de Divergências</h4>
-                  <p class="text-slate-400">Identificamos discrepâncias em alíquotas de impostos e valores, alertando o gestor antes da integração financeira.</p>
+                  <h4 class="text-lg font-bold mb-2 group-hover:text-blue-300 transition-colors" style="color: #fff;">Auditoria de Divergências</h4>
+                  <p class="text-slate-400 leading-relaxed">Identificamos discrepâncias em alíquotas de impostos e valores, alertando o gestor antes da integração financeira.</p>
                 </div>
               </div>
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-6 h-6 mt-1 text-blue-400">
-                  <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <div class="group flex gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all duration-300">
+                <div class="flex-shrink-0 w-8 h-8 mt-0.5">
+                  <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-green-400 to-green-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </div>
                 </div>
                 <div>
-                  <h4 class="text-lg font-bold mb-2">Manifestação do Destinatário</h4>
-                  <p class="text-slate-400">Realize a ciência da emissão e confirmação da operação diretamente pelo sistema, garantindo segurança jurídica.</p>
+                  <h4 class="text-lg font-bold mb-2 group-hover:text-green-300 transition-colors" style="color: #fff;">Manifestação do Destinatário</h4>
+                  <p class="text-slate-400 leading-relaxed">Realize a ciência da emissão e confirmação da operação diretamente pelo sistema, garantindo segurança jurídica.</p>
                 </div>
               </div>
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-6 h-6 mt-1 text-blue-400">
-                  <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <div class="group flex gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all duration-300">
+                <div class="flex-shrink-0 w-8 h-8 mt-0.5">
+                  <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-400 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </div>
                 </div>
                 <div>
-                  <h4 class="text-lg font-bold mb-2">Rastreabilidade Completa</h4>
-                  <p class="text-slate-400">Saiba exatamente quem aprovou, quando integrou e quais alterações foram feitas em cada documento fiscal.</p>
+                  <h4 class="text-lg font-bold mb-2 group-hover:text-purple-300 transition-colors" style="color: #fff;">Rastreabilidade Completa</h4>
+                  <p class="text-slate-400 leading-relaxed">Saiba exatamente quem aprovou, quando integrou e quais alterações foram feitas em cada documento fiscal.</p>
                 </div>
               </div>
             </div>
@@ -354,8 +478,8 @@
           
           <!-- Visual Placeholder -->
           <div class="reveal-element lg:pl-10">
-            <div class="rounded-3xl border border-slate-700 shadow-3xl overflow-hidden bg-slate-800">
-              <img src="~/assets/images/listagem.png" alt="XERP Notas Listagem" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-500" />
+            <div class="group rounded-3xl border-2 border-slate-700/50 shadow-2xl overflow-hidden bg-slate-800/50 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-500">
+              <img src="~/assets/images/listagem.png" alt="XERP Notas Listagem" class="w-full h-auto opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
             </div>
           </div>
         </div>
@@ -433,5 +557,99 @@ export default {
 
 .font-sans {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Feature Cards - 2026 Design Trends */
+.feature-card {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px -12px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* Smooth backdrop blur effect */
+@supports (backdrop-filter: blur(10px)) {
+  .feature-card {
+    backdrop-filter: blur(10px);
+  }
+  
+  .feature-card:hover {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Metric Cards - 2026 Design */
+.metric-card {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.metric-card:hover {
+  box-shadow: 
+    0 20px 40px -12px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Liquid Glass Cards - Ultra Modern 2026 */
+.liquid-glass-card {
+  position: relative;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+.liquid-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.8) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+
+.liquid-glass-card:hover::before {
+  opacity: 1;
+}
+
+@supports (backdrop-filter: blur(24px)) {
+  .liquid-glass-card {
+    backdrop-filter: blur(24px) saturate(180%);
+  }
+  
+  .liquid-glass-card:hover {
+    backdrop-filter: blur(32px) saturate(200%);
+  }
 }
 </style>
