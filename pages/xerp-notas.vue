@@ -476,10 +476,29 @@
             </div>
           </div>
           
-          <!-- Visual Placeholder -->
+          <!-- Visual Placeholder - ENHANCED -->
           <div class="reveal-element lg:pl-10">
-            <div class="group rounded-3xl border-2 border-slate-700/50 shadow-2xl overflow-hidden bg-slate-800/50 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-500">
-              <img src="~/assets/images/listagem.png" alt="XERP Notas Listagem" class="w-full h-auto opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+            <div class="image-spotlight-container group relative rounded-3xl overflow-hidden">
+              <!-- Glow effects -->
+              <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 rounded-3xl blur-xl opacity-60 group-hover:opacity-90 animate-pulse-slow transition-opacity duration-1000"></div>
+              
+              <!-- Image container -->
+              <div class="relative rounded-3xl border-2 border-gradient-to-br from-blue-400/80 to-purple-400/80 shadow-2xl overflow-hidden bg-slate-800/70 backdrop-blur-md hover:border-blue-400 transition-all duration-700">
+                <!-- Inner glow -->
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
+                <!-- Image -->
+                <div class="relative z-10">
+                  <img 
+                    src="~/assets/images/listagem.png" 
+                    alt="XERP Notas Listagem" 
+                    class="w-full h-auto opacity-95 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out transform-gpu" 
+                  />
+                </div>
+                
+                <!-- Shine effect -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -651,5 +670,28 @@ export default {
   .liquid-glass-card:hover {
     backdrop-filter: blur(32px) saturate(200%);
   }
+}
+
+/* Image Spotlight Animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.image-spotlight-container {
+  transform: perspective(1000px);
+}
+
+.image-spotlight-container:hover {
+  transform: perspective(1000px) scale(1.02);
+  transition: transform 0.7s ease-out;
 }
 </style>
