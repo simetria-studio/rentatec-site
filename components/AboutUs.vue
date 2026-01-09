@@ -107,32 +107,125 @@
         </div>
       </div>
       
-      <!-- Linha do tempo simplificada -->
-      <div class="mt-20 reveal-element">
-        <div class="flex justify-center space-x-4 md:space-x-8 lg:space-x-16">
-          <div class="text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3 shadow-md">
-              <span class="text-blue-600 font-bold">2008</span>
-            </div>
-            <p class="text-sm text-gray-600">Fundação</p>
+      <!-- Linha do tempo modernizada -->
+      <div class="mt-24 reveal-element">
+        <div class="mb-12 text-center">
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+            Nossa <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Jornada</span>
+          </h3>
+          <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+            De uma startup inovadora a referência em soluções empresariais
+          </p>
+        </div>
+        
+        <div class="relative max-w-5xl mx-auto px-4">
+          <!-- Linha conectora com gradiente -->
+          <div class="absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full hidden md:block timeline-line">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 rounded-full blur-sm opacity-50"></div>
           </div>
-          <div class="text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3 shadow-md">
-              <span class="text-blue-600 font-bold">2012</span>
+          
+          <!-- Timeline items -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
+            <!-- 2008 - Fundação -->
+            <div class="timeline-item text-center group">
+              <div class="relative inline-block">
+                <!-- Círculo principal com glassmorphism -->
+                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden border-4 border-white">
+                  <!-- Brilho interno -->
+                  <div class="absolute inset-0 bg-white/20 rounded-full"></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-blue-700/30 to-transparent rounded-full"></div>
+                  
+                  <!-- Ano -->
+                  <span class="text-white font-extrabold text-xl relative z-10 drop-shadow-lg">2008</span>
+                  
+                  <!-- Efeito de anel pulsante -->
+                  <div class="absolute inset-0 rounded-full border-2 border-blue-400 animate-ping opacity-20"></div>
+                </div>
+                
+                <!-- Ponto conectivo -->
+                <div class="hidden md:block absolute top-1/2 -right-8 w-8 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 transform -translate-y-1/2"></div>
+              </div>
+              
+              <div class="mt-6 space-y-2">
+                <h4 class="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors duration-300">Fundação</h4>
+                <p class="text-sm text-gray-600 leading-relaxed px-2">
+                  Início da jornada com foco em soluções inovadoras
+                </p>
+              </div>
             </div>
-            <p class="text-sm text-gray-600">Expansão</p>
-          </div>
-          <div class="text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3 shadow-md">
-              <span class="text-blue-600 font-bold">2016</span>
+            
+            <!-- 2012 - Expansão -->
+            <div class="timeline-item text-center group">
+              <div class="relative inline-block">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden border-4 border-white">
+                  <div class="absolute inset-0 bg-white/20 rounded-full"></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-indigo-700/30 to-transparent rounded-full"></div>
+                  
+                  <span class="text-white font-extrabold text-xl relative z-10 drop-shadow-lg">2012</span>
+                  
+                  <div class="absolute inset-0 rounded-full border-2 border-indigo-400 animate-ping opacity-20 animation-delay-500"></div>
+                </div>
+                
+                <div class="hidden md:block absolute top-1/2 -right-8 w-8 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 transform -translate-y-1/2"></div>
+              </div>
+              
+              <div class="mt-6 space-y-2">
+                <h4 class="font-bold text-lg text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">Expansão</h4>
+                <p class="text-sm text-gray-600 leading-relaxed px-2">
+                  Crescimento da base de clientes e novos mercados
+                </p>
+              </div>
             </div>
-            <p class="text-sm text-gray-600">Inovação</p>
-          </div>
-          <div class="text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3 shadow-md">
-              <span class="text-blue-600 font-bold">2023</span>
+            
+            <!-- 2016 - Inovação -->
+            <div class="timeline-item text-center group">
+              <div class="relative inline-block">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden border-4 border-white">
+                  <div class="absolute inset-0 bg-white/20 rounded-full"></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-purple-700/30 to-transparent rounded-full"></div>
+                  
+                  <span class="text-white font-extrabold text-xl relative z-10 drop-shadow-lg">2016</span>
+                  
+                  <div class="absolute inset-0 rounded-full border-2 border-purple-400 animate-ping opacity-20 animation-delay-1000"></div>
+                </div>
+                
+                <div class="hidden md:block absolute top-1/2 -right-8 w-8 h-2 bg-gradient-to-r from-purple-500 to-pink-500 transform -translate-y-1/2"></div>
+              </div>
+              
+              <div class="mt-6 space-y-2">
+                <h4 class="font-bold text-lg text-gray-900 group-hover:text-purple-600 transition-colors duration-300">Inovação</h4>
+                <p class="text-sm text-gray-600 leading-relaxed px-2">
+                  Lançamento de produtos disruptivos e tecnologias avançadas
+                </p>
+              </div>
             </div>
-            <p class="text-sm text-gray-600">Hoje</p>
+            
+            <!-- 2026 - Hoje -->
+            <div class="timeline-item text-center group">
+              <div class="relative inline-block">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden border-4 border-white">
+                  <div class="absolute inset-0 bg-white/20 rounded-full"></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-rose-700/30 to-transparent rounded-full"></div>
+                  
+                  <!-- Badge "Hoje" com ícone -->
+                  <div class="flex flex-col items-center relative z-10">
+                    <svg class="w-8 h-8 text-white mb-1 drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-white font-extrabold text-xs drop-shadow-lg">2026</span>
+                  </div>
+                  
+                  <div class="absolute inset-0 rounded-full border-2 border-pink-400 animate-ping opacity-30 animation-delay-1500"></div>
+                </div>
+              </div>
+              
+              <div class="mt-6 space-y-2">
+                <h4 class="font-bold text-lg text-gray-900 group-hover:text-pink-600 transition-colors duration-300">Hoje</h4>
+                <p class="text-sm text-gray-600 leading-relaxed px-2">
+                  Líder em transformação digital com IA e cloud
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -175,6 +268,18 @@
 
 .animate-pulse-slow {
   animation: pulse-slow 6s infinite;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1.5s;
 }
 
 .animation-delay-2000 {
@@ -230,6 +335,54 @@
 .animate-gradient-x {
   background-size: 200% 200%;
   animation: gradient-x 5s ease infinite;
+}
+
+/* Animação da linha da timeline */
+.timeline-line {
+  animation: timeline-reveal 2s ease-out forwards;
+  transform-origin: left;
+}
+
+@keyframes timeline-reveal {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Animação dos itens da timeline */
+.timeline-item {
+  opacity: 0;
+  animation: timeline-item-appear 0.8s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.timeline-item:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.timeline-item:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+@keyframes timeline-item-appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 </style>
 
