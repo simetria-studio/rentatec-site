@@ -103,6 +103,216 @@
       </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal-element">
+          <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-orange-50 text-orange-700 text-sm font-semibold mb-6 border border-orange-100 uppercase tracking-wider">
+            Planos Flexíveis
+          </div>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">
+            Escolha o Plano Ideal para sua Empresa
+          </h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">Todas as funcionalidades essenciais incluídas. Escale conforme seu negócio cresce.</p>
+        </div>
+
+        <!-- Pricing Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 reveal-element">
+          
+          <!-- Plano Básico -->
+          <div class="relative bg-white rounded-3xl border-2 border-slate-200 p-8 hover:border-blue-300 transition-all duration-300 hover:shadow-xl flex flex-col">
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">Básico</h3>
+              <p class="text-sm text-slate-500">Ideal para pequenos negócios</p>
+            </div>
+            
+            <div class="mb-8">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="text-5xl font-extrabold text-slate-900">R$ 120</span>
+              </div>
+              <p class="text-sm text-slate-500 font-medium">por mês</p>
+              <p class="text-xs text-slate-400 mt-2">CNPJ Matriz</p>
+              <p class="text-xs text-blue-600 font-semibold mt-1">+ R$ 65/mês por filial</p>
+            </div>
+
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700"><strong class="font-semibold text-slate-900">1.000</strong> documentos fiscais/mês</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700"><strong class="font-semibold text-slate-900">10</strong> importações IA</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700">Auditoria automática</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700">Integração ERP <span class="text-slate-500">(requer setup)</span></span>
+              </li>
+            </ul>
+
+            <a href="#contact" class="w-full py-3.5 px-6 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all duration-300 text-center block">
+              Começar Agora
+            </a>
+          </div>
+
+          <!-- Plano Intermediário - POPULAR -->
+          <div class="relative bg-gradient-to-b from-orange-50 to-white rounded-3xl border-2 border-orange-400 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col transform lg:scale-105">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
+              Mais Popular
+            </div>
+            
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">Intermediário</h3>
+              <p class="text-sm text-slate-600">Para empresas em crescimento</p>
+            </div>
+            
+            <div class="mb-8">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="text-5xl font-extrabold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">R$ 300</span>
+              </div>
+              <p class="text-sm text-slate-600 font-medium">por mês</p>
+              <p class="text-xs text-slate-500 mt-2">CNPJ Matriz</p>
+              <p class="text-xs text-orange-600 font-semibold mt-1">+ R$ 65/mês por filial</p>
+            </div>
+
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700"><strong class="font-semibold text-slate-900">1.001 a 5.000</strong> documentos/mês</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700"><strong class="font-semibold text-slate-900">25</strong> importações IA</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700">Auditoria automática</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700">Integração ERP <span class="text-slate-500">(requer setup)</span></span>
+              </li>
+            </ul>
+
+            <a href="#contact" class="w-full py-3.5 px-6 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all duration-300 text-center block">
+              Começar Agora
+            </a>
+          </div>
+
+          <!-- Plano Avançado -->
+          <div class="relative bg-white rounded-3xl border-2 border-slate-200 p-8 hover:border-slate-300 transition-all duration-300 hover:shadow-xl flex flex-col">
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">Avançado</h3>
+              <p class="text-sm text-slate-500">Recursos completos e escaláveis</p>
+            </div>
+            
+            <div class="mb-8">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="text-5xl font-extrabold text-slate-900">R$ 500</span>
+              </div>
+              <p class="text-sm text-slate-500 font-medium">por mês</p>
+              <p class="text-xs text-slate-400 mt-2">CNPJ Matriz</p>
+              <p class="text-xs text-slate-600 font-semibold mt-1">+ R$ 65/mês por filial</p>
+            </div>
+
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-slate-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700"><strong class="font-semibold text-slate-900">5.001 a 10.000</strong> documentos/mês</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-slate-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700"><strong class="font-semibold text-slate-900">50</strong> importações IA</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-slate-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700">Auditoria automática</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-slate-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-700">Integração ERP <span class="text-slate-500">(requer setup)</span></span>
+              </li>
+            </ul>
+
+            <a href="#contact" class="w-full py-3.5 px-6 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all duration-300 text-center block">
+              Começar Agora
+            </a>
+          </div>
+
+          <!-- Plano Corporativo -->
+          <div class="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl border-2 border-slate-700 p-8 hover:border-slate-600 transition-all duration-300 hover:shadow-xl flex flex-col text-white">
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold mb-2" style="color: #fff;">Corporativo</h3>
+              <p class="text-sm text-slate-400">Solução customizada para sua empresa</p>
+            </div>
+            
+            <div class="mb-8">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="text-4xl font-extrabold">Sob Consulta</span>
+              </div>
+            </div>
+
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-300"><strong class="font-semibold text-white">Acima de 10.000</strong> documentos/mês</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-300">Tudo do plano Avançado</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-300">Customizações exclusivas</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-sm text-slate-300">SLA garantido</span>
+              </li>
+            </ul>
+
+            <a href="#contact" class="w-full py-3.5 px-6 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-100 transition-all duration-300 text-center block">
+              Falar com Vendas
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-12 reveal-element">
+          <div class="bg-gradient-to-r from-blue-50 via-slate-50 to-orange-50 border-2 border-blue-200 rounded-2xl p-6 md:p-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-slate-600 font-medium">Documento adicional importado</p>
+                  <p class="text-2xl font-extrabold text-slate-900">R$ 2,90 <span class="text-sm font-normal text-slate-500">por documento</span></p>
+                </div>
+              </div>
+              <div class="hidden md:block w-px h-12 bg-slate-300"></div>
+              <div class="text-sm text-slate-600">
+                <p class="font-semibold text-slate-900">Aplicável a todos os planos</p>
+                <p>Escale conforme sua necessidade</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="mt-12 text-center reveal-element">
+          <p class="text-sm text-slate-500 mb-4">✓ Cancele quando quiser &nbsp;•&nbsp; ✓ Suporte técnico incluso</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Operations Section -->
     <section class="py-24 bg-slate-900 text-white overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
