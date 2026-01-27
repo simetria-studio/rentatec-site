@@ -210,7 +210,30 @@
           <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">
             Escolha o Plano Ideal para sua Empresa
           </h2>
-          <p class="text-lg text-slate-600 max-w-2xl mx-auto">Todas as funcionalidades essenciais incluídas. Escale conforme seu negócio cresce.</p>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">Todas as funcionalidades essenciais incluídas. Escale conforme seu negócio cresce.</p>
+
+          <!-- Billing Period Toggle -->
+          <div class="flex justify-center items-center gap-4 mb-4">
+            <span class="text-sm font-medium transition-colors duration-300" :class="billingPeriod === 'monthly' ? 'text-slate-900 font-bold' : 'text-slate-500'">Mensal</span>
+            
+            <button 
+              @click="billingPeriod = billingPeriod === 'annual' ? 'monthly' : 'annual'"
+              class="relative w-16 h-8 bg-slate-200 rounded-full p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              :class="{'bg-blue-600': billingPeriod === 'annual'}"
+              role="switch"
+              :aria-checked="billingPeriod === 'annual'"
+            >
+              <div 
+                class="w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300"
+                :class="{'translate-x-8': billingPeriod === 'annual', 'translate-x-0': billingPeriod === 'monthly'}"
+              ></div>
+            </button>
+            
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-medium transition-colors duration-300" :class="billingPeriod === 'annual' ? 'text-slate-900 font-bold' : 'text-slate-500'">Anual</span>
+              <span class="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-bold rounded-full border border-green-200">Economize</span>
+            </div>
+          </div>
         </div>
 
         <!-- Pricing Cards Grid -->
@@ -225,11 +248,11 @@
             
             <div class="mb-8">
               <div class="flex items-baseline gap-2 mb-1">
-                <span class="text-5xl font-extrabold text-slate-900">R$ 120</span>
+                <span class="text-4xl font-extrabold text-slate-900">R$ {{ prices.basic }}</span>
               </div>
               <p class="text-sm text-slate-500 font-medium">por mês</p>
               <p class="text-xs text-slate-400 mt-2">CNPJ Matriz</p>
-              <p class="text-xs text-blue-600 font-semibold mt-1">+ R$ 65/mês por filial</p>
+              <p class="text-xs text-blue-600 font-semibold mt-1">+ R$ {{ prices.filial }}/mês por filial</p>
             </div>
 
             <ul class="space-y-4 mb-8 flex-grow">
@@ -269,11 +292,11 @@
             
             <div class="mb-8">
               <div class="flex items-baseline gap-2 mb-1">
-                <span class="text-5xl font-extrabold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">R$ 300</span>
+                <span class="text-4xl font-extrabold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">R$ {{ prices.intermediate }}</span>
               </div>
               <p class="text-sm text-slate-600 font-medium">por mês</p>
               <p class="text-xs text-slate-500 mt-2">CNPJ Matriz</p>
-              <p class="text-xs text-orange-600 font-semibold mt-1">+ R$ 65/mês por filial</p>
+              <p class="text-xs text-orange-600 font-semibold mt-1">+ R$ {{ prices.filial }}/mês por filial</p>
             </div>
 
             <ul class="space-y-4 mb-8 flex-grow">
@@ -309,11 +332,11 @@
             
             <div class="mb-8">
               <div class="flex items-baseline gap-2 mb-1">
-                <span class="text-5xl font-extrabold text-slate-900">R$ 500</span>
+                <span class="text-4xl font-extrabold text-slate-900">R$ {{ prices.advanced }}</span>
               </div>
               <p class="text-sm text-slate-500 font-medium">por mês</p>
               <p class="text-xs text-slate-400 mt-2">CNPJ Matriz</p>
-              <p class="text-xs text-slate-600 font-semibold mt-1">+ R$ 65/mês por filial</p>
+              <p class="text-xs text-slate-600 font-semibold mt-1">+ R$ {{ prices.filial }}/mês por filial</p>
             </div>
 
             <ul class="space-y-4 mb-8 flex-grow">
@@ -418,6 +441,13 @@
                 <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
               </div>
               <span class="text-sm font-medium">Suporte técnico incluso</span>
+            </div>
+            <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+            <div class="flex items-center gap-2 group">
+              <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+              </div>
+              <span class="text-sm font-medium">Pagamento no cartão de crédito</span>
             </div>
           </div>
         </div>
@@ -537,6 +567,31 @@
 <script>
 export default {
   layout: 'default',
+  data() {
+    return {
+      billingPeriod: 'annual' // 'monthly' or 'annual'
+    }
+  },
+  computed: {
+    prices() {
+      const isMonthly = this.billingPeriod === 'monthly';
+      const multiplier = isMonthly ? 1.15 : 1;
+      
+      const formatPrice = (value) => {
+        return value.toLocaleString('pt-BR', { minimumFractionDigits: isMonthly ? 0 : 0, maximumFractionDigits: 2 });
+      };
+
+      return {
+        basic: formatPrice(120 * multiplier),
+        intermediate: formatPrice(300 * multiplier),
+        advanced: formatPrice(500 * multiplier),
+        filial: formatPrice(isMonthly ? 75 : 65)
+      };
+    },
+    periodLabel() {
+      return this.billingPeriod === 'monthly' ? 'mês' : 'mês'; // Display per month regardless, context is plan duration
+    }
+  },
   head() {
     return {
       title: 'XERP Notas - Automação e Auditoria Fiscal Inteligente | Rentatec',
