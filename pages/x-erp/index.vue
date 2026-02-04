@@ -70,105 +70,136 @@
           </p>
           
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                  <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Comercial</h3>
-            </div>
+            <NuxtLink to="/x-erp/comercial" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Comercial</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"></path>
-                  <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Estoque</h3>
-            </div>
+            <NuxtLink to="/x-erp/estoque" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Estoque</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Fisco-contábil</h3>
-            </div>
+            <NuxtLink to="/x-erp/fisco-contabil" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Fisco-contábil</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Financeiro</h3>
-            </div>
+            <NuxtLink to="/x-erp/financeiro" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Financeiro</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                  <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Projetos</h3>
-            </div>
+            <NuxtLink to="/x-erp/projetos" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Projetos</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Informações Gerenciais</h3>
-            </div>
+            <NuxtLink to="/x-erp/informacoes-gerenciais" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Informações Gerenciais</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Gestão de pessoas</h3>
-            </div>
+            <NuxtLink to="/x-erp/gestao-pessoas" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Gestão de pessoas</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 000 16zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Produção</h3>
-            </div>
+            <NuxtLink to="/x-erp/producao" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Produção</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Relatórios</h3>
-            </div>
+            <NuxtLink to="/x-erp/relatorios" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Relatórios</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
             
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-gray-900">Vendas</h3>
-            </div>
+            <NuxtLink to="/x-erp/vendas" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-center cursor-pointer transform hover:scale-105">
+              <h3 class="font-semibold text-gray-900 mb-2">Vendas</h3>
+              <p class="text-xs text-blue-600 hover:text-blue-700">Clique para saber mais</p>
+            </NuxtLink>
           </div>
           
           <p class="text-lg text-gray-700 max-w-4xl mx-auto text-center">
             Assim, auxiliamos empresários e executivos no gerenciamento dos seus negócios e tomadas de decisão, 
             com possibilidade de customização para ajustar as melhores práticas do mercado ao seu negócio!
           </p>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- Setores Atendidos -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal-element">
+          <div class="inline-block px-3 py-1 rounded-full bg-blue-100 mb-4 shadow-sm">
+            <span class="text-blue-600 text-sm font-medium tracking-wider">SETORES ATENDIDOS</span>
+          </div>
+          <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+            Atendemos diversos <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 animate-gradient-x">segmentos de mercado</span>
+          </h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal-element">
+          <!-- Coluna Esquerda: Lista de Setores -->
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+              <button 
+                @click="selectedSector = 'industria'" 
+                :class="selectedSector === 'industria' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
+                class="w-full px-6 py-4 text-left font-semibold transition-all duration-200 border-b border-gray-200">
+                Indústria
+              </button>
+              
+              <button 
+                @click="selectedSector = 'usinagem'" 
+                :class="selectedSector === 'usinagem' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
+                class="w-full px-6 py-4 text-left font-semibold transition-all duration-200 border-b border-gray-200">
+                Usinagem
+              </button>
+              
+              <button 
+                @click="selectedSector = 'atacado'" 
+                :class="selectedSector === 'atacado' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
+                class="w-full px-6 py-4 text-left font-semibold transition-all duration-200">
+                Atacado
+              </button>
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Conteúdo do Setor Selecionado -->
+          <div class="lg:col-span-2">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 min-h-[300px]">
+              <!-- Conteúdo Indústria -->
+              <div v-if="selectedSector === 'industria'">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Indústria</h3>
+                <p class="text-gray-600 mb-6">Informações em breve</p>
+                <button class="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                  Saiba mais
+                </button>
+              </div>
+
+              <!-- Conteúdo Usinagem -->
+              <div v-if="selectedSector === 'usinagem'">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Usinagem</h3>
+                <p class="text-gray-600 mb-6">Informações em breve</p>
+                <button class="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                  Saiba mais
+                </button>
+              </div>
+
+              <!-- Conteúdo Atacado -->
+              <div v-if="selectedSector === 'atacado'">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Atacado</h3>
+                <p class="text-gray-600 mb-6">Informações em breve</p>
+                <button class="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                  Saiba mais
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -385,6 +416,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      selectedSector: 'industria' // Setor selecionado por padrão
+    }
+  },
   mounted() {
     // Animação de revelação ao scroll
     const observer = new IntersectionObserver((entries) => {
