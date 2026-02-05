@@ -167,6 +167,34 @@
       </div>
     </section>
 
+    <!-- Webinar Section -->
+    <section class="py-12 bg-gradient-to-r from-indigo-50 to-blue-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card p-8 md:p-12 text-center">
+          <div class="inline-block px-3 py-1 rounded-full bg-indigo-100 mb-4">
+            <span class="text-indigo-600 text-sm font-medium tracking-wider">WEBINAR EXCLUSIVO</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Funcionalidades | Manifestação do Destinatário
+          </h3>
+          <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+            Aprenda como utilizar a funcionalidade de Manifestação do Destinatário no módulo de Estoque e otimize seus processos fiscais.
+          </p>
+          <a 
+            href="https://www.youtube.com/watch?v=yyVxRNCbqXY&t" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            Assistir ao Webinar
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Benefícios -->
     <section id="benefits" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
