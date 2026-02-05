@@ -64,6 +64,140 @@
       </div>
     </section>
 
+    <!-- Galeria de Funcionalidades -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Veja o Sistema em <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Ação</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
+            Interface intuitiva e moderna para gestão completa do seu negócio
+          </p>
+          <p class="text-sm text-blue-600 font-semibold">
+            {{ funcionalidades.length }} funcionalidades disponíveis
+          </p>
+        </div>
+
+        <!-- Grid de Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div 
+            v-for="func in funcionalidades" 
+            :key="func.id"
+            @click="abrirModal(func.id)"
+            class="gallery-card cursor-pointer"
+          >
+            <div class="gallery-card-inner">
+              <div class="gallery-thumbnail">
+                <img 
+                  v-if="func.tipo === 'imagem'"
+                  :src="`/assets/images/${func.midia}`" 
+                  :alt="func.titulo"
+                  class="w-full h-48 object-cover"
+                />
+                <div v-else class="w-full h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                  <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
+                  </svg>
+                </div>
+                <div class="gallery-overlay">
+                  <div class="text-white text-center">
+                    <div class="text-4xl mb-2">{{ func.icone }}</div>
+                    <p class="text-sm font-semibold">Clique para visualizar</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">{{ func.titulo }}</h3>
+                <p class="text-sm text-gray-600">{{ func.descricao }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal/Lightbox -->
+    <Teleport to="body">
+      <Transition name="modal">
+        <div 
+          v-if="modalAberto" 
+          class="modal-backdrop"
+          @click.self="fecharModal"
+        >
+          <div class="modal-container">
+            <button 
+              @click="fecharModal"
+              class="modal-close"
+              aria-label="Fechar"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+
+            <button 
+              v-if="funcionalidadeAtual > 0"
+              @click="navegarAnterior"
+              class="modal-nav modal-nav-prev"
+              aria-label="Anterior"
+            >
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+
+            <button 
+              v-if="funcionalidadeAtual < funcionalidades.length - 1"
+              @click="navegarProximo"
+              class="modal-nav modal-nav-next"
+              aria-label="Próximo"
+            >
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <div class="modal-content">
+              <div v-if="funcionalidades[funcionalidadeAtual]" class="modal-media">
+                <img 
+                  v-if="funcionalidades[funcionalidadeAtual].tipo === 'imagem'"
+                  :src="`/assets/images/${funcionalidades[funcionalidadeAtual].midia}`"
+                  :alt="funcionalidades[funcionalidadeAtual].titulo"
+                  class="max-w-full max-h-[80vh] mx-auto rounded-lg shadow-2xl"
+                />
+                <video 
+                  v-else
+                  :src="`/assets/images/${funcionalidades[funcionalidadeAtual].midia}`"
+                  controls
+                  class="max-w-full max-h-[80vh] mx-auto rounded-lg shadow-2xl"
+                />
+                
+                <div class="modal-info">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-2xl font-bold text-white mb-2">
+                        {{ funcionalidades[funcionalidadeAtual].icone }} {{ funcionalidades[funcionalidadeAtual].titulo }}
+                      </h3>
+                      <p class="text-blue-100">{{ funcionalidades[funcionalidadeAtual].descricao }}</p>
+                    </div>
+                    <div class="text-white text-sm">
+                      {{ funcionalidadeAtual + 1 }} / {{ funcionalidades.length }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
+
     <!-- Funcionalidades -->
     <section id="features" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,13 +209,16 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="glass-card hover-float p-8">
+          <div class="glass-card hover-float p-8 relative">
+            <div class="absolute -top-3 -right-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+              ⭐ DESTAQUE
+            </div>
             <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
               <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Pedidos</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">📦 Pedidos</h3>
             <p class="text-gray-600">Plataforma completa para gerenciar diversos tipos de pedidos: pré-vendas, PDV, atacado, móvel, shopping e mais. Integração com pedidos móveis e recuperação de pedidos perdidos.</p>
           </div>
 
@@ -113,16 +250,6 @@
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-4">Nota Fiscal Eletrônica</h3>
             <p class="text-gray-600">Emissão e gestão de NF-e com movimentação, cancelamento, carta de correção e geração de XML. Atualização automática do certificado digital e conformidade fiscal.</p>
-          </div>
-
-          <div class="glass-card hover-float p-8">
-            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Fatura Eletrônica</h3>
-            <p class="text-gray-600">Emissão e gestão de faturas eletrônicas com movimentação e controle detalhado. Maior segurança e rastreabilidade das transações financeiras para clientes e fornecedores.</p>
           </div>
 
           <div class="glass-card hover-float p-8">
@@ -165,13 +292,16 @@
             <p class="text-gray-600">Solução completa para transporte de cargas eletrônico com seleção de notas, manifesto eletrônico e geração de XML. Integração com entidades fiscais e relatórios detalhados.</p>
           </div>
 
-          <div class="glass-card hover-float p-8">
+          <div class="glass-card hover-float p-8 relative">
+            <div class="absolute -top-3 -right-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+              ⭐ DESTAQUE
+            </div>
             <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
               <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">NFS-e (Nota Fiscal de Serviços)</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">📄 NFS-e (Nota Fiscal de Serviços)</h3>
             <p class="text-gray-600">Emissão e gestão de NFS-e com movimentação eletrônica e importação de arquivos. Interface intuitiva para facilitar o processo com automação e conformidade fiscal.</p>
           </div>
 
@@ -298,6 +428,91 @@
   </div>
 </template>
 
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// Array de funcionalidades - FÁCIL ADICIONAR NOVAS!
+const funcionalidades = ref([
+  {
+    id: 'pedidos',
+    titulo: 'Gestão de Pedidos',
+    descricao: 'Rastreamento completo de pedidos em tempo real com filtros avançados',
+    tipo: 'imagem',
+    midia: 'tela-pedidos.png',
+    icone: '📦'
+  },
+  {
+    id: 'nfe',
+    titulo: 'Gestão de NF-e',
+    descricao: 'Emissão e gestão de Notas Fiscais Eletrônicas com movimentação e controle detalhado',
+    tipo: 'imagem',
+    midia: 'tela-nfe.png',
+    icone: '📋'
+  }
+  // ADICIONE MAIS FUNCIONALIDADES AQUI!
+  // Exemplo de vídeo:
+  // {
+  //   id: 'crm-demo',
+  //   titulo: 'CRM em Ação',
+  //   descricao: 'Demonstração do módulo CRM',
+  //   tipo: 'video',
+  //   midia: 'crm-demo.mp4',
+  //   icone: '🎥'
+  // }
+])
+
+const modalAberto = ref(false)
+const funcionalidadeAtual = ref(0)
+
+const abrirModal = (id) => {
+  const index = funcionalidades.value.findIndex(f => f.id === id)
+  if (index !== -1) {
+    funcionalidadeAtual.value = index
+    modalAberto.value = true
+    document.body.style.overflow = 'hidden'
+  }
+}
+
+const fecharModal = () => {
+  modalAberto.value = false
+  document.body.style.overflow = ''
+}
+
+const navegarProximo = () => {
+  if (funcionalidadeAtual.value < funcionalidades.value.length - 1) {
+    funcionalidadeAtual.value++
+  }
+}
+
+const navegarAnterior = () => {
+  if (funcionalidadeAtual.value > 0) {
+    funcionalidadeAtual.value--
+  }
+}
+
+// Navegação por teclado
+const handleKeydown = (e) => {
+  if (!modalAberto.value) return
+  
+  if (e.key === 'Escape') {
+    fecharModal()
+  } else if (e.key === 'ArrowRight') {
+    navegarProximo()
+  } else if (e.key === 'ArrowLeft') {
+    navegarAnterior()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+  document.body.style.overflow = ''
+})
+</script>
+
 <style scoped>
 .glass-card {
   background: rgba(255, 255, 255, 0.7);
@@ -346,5 +561,209 @@
 
 .modern-button:hover::before {
   transform: translateX(0);
+}
+
+/* Screenshot Section Styles */
+.gallery-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-card-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-thumbnail {
+  position: relative;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(79, 70, 229, 0.9) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.modal-close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.modal-nav-prev {
+  left: -4rem;
+}
+
+.modal-nav-next {
+  right: -4rem;
+}
+
+.modal-content {
+  background: transparent;
+}
+
+.modal-media {
+  position: relative;
+}
+
+.modal-info {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.95) 0%, rgba(79, 70, 229, 0.95) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+}
+
+/* Modal Transitions */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-enter-active .modal-container,
+.modal-leave-active .modal-container {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-from .modal-container {
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.modal-leave-to .modal-container {
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .modal-nav-prev {
+    left: 0.5rem;
+  }
+  
+  .modal-nav-next {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-backdrop {
+    padding: 1rem;
+  }
+  
+  .modal-nav {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .modal-nav-prev {
+    left: 0.25rem;
+  }
+  
+  .modal-nav-next {
+    right: 0.25rem;
+  }
+  
+  .modal-close {
+    top: auto;
+    bottom: -3rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .modal-info {
+    padding: 1rem;
+  }
+  
+  .modal-info h3 {
+    font-size: 1.25rem;
+  }
 }
 </style>
