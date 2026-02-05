@@ -198,6 +198,157 @@
       </div>
     </section>
 
+    <!-- Galeria de Funcionalidades -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Veja o Sistema em <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Ação</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
+            Interface intuitiva e moderna para gestão completa das finanças
+          </p>
+          <p class="text-sm text-blue-600 font-semibold">
+            {{ funcionalidades.length }} funcionalidade{{ funcionalidades.length > 1 ? 's' : '' }} disponível{{ funcionalidades.length > 1 ? 'is' : '' }}
+          </p>
+        </div>
+
+        <!-- Grid de Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div 
+            v-for="func in funcionalidades" 
+            :key="func.id"
+            @click="abrirModal(func.id)"
+            class="gallery-card cursor-pointer"
+          >
+            <div class="gallery-card-inner">
+              <div class="gallery-thumbnail">
+                <img 
+                  v-if="func.tipo === 'imagem'"
+                  :src="`/assets/images/${func.midia}`" 
+                  :alt="func.titulo"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="gallery-overlay">
+                  <div class="text-white text-center">
+                    <div class="text-4xl mb-2">{{ func.icone }}</div>
+                    <p class="text-sm font-semibold">Clique para visualizar</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">{{ func.titulo }}</h3>
+                <p class="text-sm text-gray-600">{{ func.descricao }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal/Lightbox -->
+    <Teleport to="body">
+      <Transition name="modal">
+        <div 
+          v-if="modalAberto" 
+          class="modal-backdrop"
+          @click.self="fecharModal"
+        >
+          <div class="modal-container">
+            <button 
+              @click="fecharModal"
+              class="modal-close"
+              aria-label="Fechar"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+
+            <button 
+              v-if="funcionalidadeAtual > 0"
+              @click="navegarAnterior"
+              class="modal-nav modal-nav-prev"
+              aria-label="Anterior"
+            >
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+
+            <button 
+              v-if="funcionalidadeAtual < funcionalidades.length - 1"
+              @click="navegarProximo"
+              class="modal-nav modal-nav-next"
+              aria-label="Próximo"
+            >
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <div class="modal-content">
+              <div v-if="funcionalidades[funcionalidadeAtual]" class="modal-media">
+                <img 
+                  v-if="funcionalidades[funcionalidadeAtual].tipo === 'imagem'"
+                  :src="`/assets/images/${funcionalidades[funcionalidadeAtual].midia}`"
+                  :alt="funcionalidades[funcionalidadeAtual].titulo"
+                  class="max-w-full max-h-[80vh] mx-auto rounded-lg shadow-2xl"
+                />
+                
+                <div class="modal-info">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-2xl font-bold text-white mb-2">
+                        {{ funcionalidades[funcionalidadeAtual].icone }} {{ funcionalidades[funcionalidadeAtual].titulo }}
+                      </h3>
+                      <p class="text-blue-100">{{ funcionalidades[funcionalidadeAtual].descricao }}</p>
+                    </div>
+                    <div class="text-white text-sm">
+                      {{ funcionalidadeAtual + 1 }} / {{ funcionalidades.length }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
+
+    <!-- Webinar Section -->
+    <section class="py-12 bg-gradient-to-r from-indigo-50 to-blue-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card p-8 md:p-12 text-center">
+          <div class="inline-block px-3 py-1 rounded-full bg-indigo-100 mb-4">
+            <span class="text-indigo-600 text-sm font-medium tracking-wider">WEBINAR EXCLUSIVO</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Funcionalidades | Gestão de Contratos e Contas a Receber
+          </h3>
+          <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+            Aprenda como utilizar as funcionalidades de Gestão de Contratos e Contas a Receber no módulo Financeiro e otimize sua gestão financeira.
+          </p>
+          <a 
+            href="https://www.youtube.com/watch?v=hh3XQ7pOgkg&t" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            Assistir ao Webinar
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Benefícios -->
     <section id="benefits" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -289,6 +440,71 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// Array de funcionalidades - FÁCIL ADICIONAR NOVAS!
+const funcionalidades = ref([
+  {
+    id: 'contas-pagar',
+    titulo: 'Contas a Pagar e Receber',
+    descricao: 'Gestão completa com filtros avançados, conciliação bancária e controle total de pagamentos e recebimentos',
+    tipo: 'imagem',
+    midia: 'tela-contas-pagar.png',
+    icone: '💰'
+  }
+])
+
+const modalAberto = ref(false)
+const funcionalidadeAtual = ref(0)
+
+const abrirModal = (id) => {
+  const index = funcionalidades.value.findIndex(f => f.id === id)
+  if (index !== -1) {
+    funcionalidadeAtual.value = index
+    modalAberto.value = true
+    document.body.style.overflow = 'hidden'
+  }
+}
+
+const fecharModal = () => {
+  modalAberto.value = false
+  document.body.style.overflow = ''
+}
+
+const navegarProximo = () => {
+  if (funcionalidadeAtual.value < funcionalidades.value.length - 1) {
+    funcionalidadeAtual.value++
+  }
+}
+
+const navegarAnterior = () => {
+  if (funcionalidadeAtual.value > 0) {
+    funcionalidadeAtual.value--
+  }
+}
+
+// Navegação por teclado
+const handleKeydown = (e) => {
+  if (!modalAberto.value) return
+  
+  if (e.key === 'Escape') {
+    fecharModal()
+  } else if (e.key === 'ArrowRight') {
+    navegarProximo()
+  } else if (e.key === 'ArrowLeft') {
+    navegarAnterior()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+  document.body.style.overflow = ''
+})
+
 useHead({
   title: 'Módulo Financeiro X-ERP | Gestão Financeira Completa - Rentatec',
   meta: [
@@ -323,8 +539,6 @@ useHead({
 <style scoped>
 .glass-card {
   background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   border-radius: 24px;
 }
@@ -368,4 +582,209 @@ useHead({
 .modern-button:hover::before {
   transform: translateX(0);
 }
+
+/* Gallery & Screenshot Section Styles */
+.gallery-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-card-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-thumbnail {
+  position: relative;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(79, 70, 229, 0.9) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.modal-close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.modal-nav-prev {
+  left: -4rem;
+}
+
+.modal-nav-next {
+  right: -4rem;
+}
+
+.modal-content {
+  background: transparent;
+}
+
+.modal-media {
+  position: relative;
+}
+
+.modal-info {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.95) 0%, rgba(79, 70, 229, 0.95) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+}
+
+/* Modal Transitions */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-enter-active .modal-container,
+.modal-leave-active .modal-container {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-from .modal-container {
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.modal-leave-to .modal-container {
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .modal-nav-prev {
+    left: 0.5rem;
+  }
+  
+  .modal-nav-next {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-backdrop {
+    padding: 1rem;
+  }
+  
+  .modal-nav {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .modal-nav-prev {
+    left: 0.25rem;
+  }
+  
+  .modal-nav-next {
+    right: 0.25rem;
+  }
+  
+  .modal-close {
+    top: auto;
+    bottom: -3rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .modal-info {
+    padding: 1rem;
+  }
+  
+  .modal-info h3 {
+    font-size: 1.25rem;
+  }
+}
 </style>
+```

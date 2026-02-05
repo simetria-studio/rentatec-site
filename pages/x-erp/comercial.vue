@@ -64,140 +64,6 @@
       </div>
     </section>
 
-    <!-- Galeria de Funcionalidades -->
-    <section class="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
-      </div>
-      
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Veja o Sistema em <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Ação</span>
-          </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
-            Interface intuitiva e moderna para gestão completa do seu negócio
-          </p>
-          <p class="text-sm text-blue-600 font-semibold">
-            {{ funcionalidades.length }} funcionalidades disponíveis
-          </p>
-        </div>
-
-        <!-- Grid de Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          <div 
-            v-for="func in funcionalidades" 
-            :key="func.id"
-            @click="abrirModal(func.id)"
-            class="gallery-card cursor-pointer"
-          >
-            <div class="gallery-card-inner">
-              <div class="gallery-thumbnail">
-                <img 
-                  v-if="func.tipo === 'imagem'"
-                  :src="`/assets/images/${func.midia}`" 
-                  :alt="func.titulo"
-                  class="w-full h-48 object-cover"
-                />
-                <div v-else class="w-full h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-                  <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                  </svg>
-                </div>
-                <div class="gallery-overlay">
-                  <div class="text-white text-center">
-                    <div class="text-4xl mb-2">{{ func.icone }}</div>
-                    <p class="text-sm font-semibold">Clique para visualizar</p>
-                  </div>
-                </div>
-              </div>
-              <div class="p-5">
-                <h3 class="text-lg font-bold text-gray-900 mb-2">{{ func.titulo }}</h3>
-                <p class="text-sm text-gray-600">{{ func.descricao }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal/Lightbox -->
-    <Teleport to="body">
-      <Transition name="modal">
-        <div 
-          v-if="modalAberto" 
-          class="modal-backdrop"
-          @click.self="fecharModal"
-        >
-          <div class="modal-container">
-            <button 
-              @click="fecharModal"
-              class="modal-close"
-              aria-label="Fechar"
-            >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </button>
-
-            <button 
-              v-if="funcionalidadeAtual > 0"
-              @click="navegarAnterior"
-              class="modal-nav modal-nav-prev"
-              aria-label="Anterior"
-            >
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-              </svg>
-            </button>
-
-            <button 
-              v-if="funcionalidadeAtual < funcionalidades.length - 1"
-              @click="navegarProximo"
-              class="modal-nav modal-nav-next"
-              aria-label="Próximo"
-            >
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </button>
-
-            <div class="modal-content">
-              <div v-if="funcionalidades[funcionalidadeAtual]" class="modal-media">
-                <img 
-                  v-if="funcionalidades[funcionalidadeAtual].tipo === 'imagem'"
-                  :src="`/assets/images/${funcionalidades[funcionalidadeAtual].midia}`"
-                  :alt="funcionalidades[funcionalidadeAtual].titulo"
-                  class="max-w-full max-h-[80vh] mx-auto rounded-lg shadow-2xl"
-                />
-                <video 
-                  v-else
-                  :src="`/assets/images/${funcionalidades[funcionalidadeAtual].midia}`"
-                  controls
-                  class="max-w-full max-h-[80vh] mx-auto rounded-lg shadow-2xl"
-                />
-                
-                <div class="modal-info">
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <h3 class="text-2xl font-bold text-white mb-2">
-                        {{ funcionalidades[funcionalidadeAtual].icone }} {{ funcionalidades[funcionalidadeAtual].titulo }}
-                      </h3>
-                      <p class="text-blue-100">{{ funcionalidades[funcionalidadeAtual].descricao }}</p>
-                    </div>
-                    <div class="text-white text-sm">
-                      {{ funcionalidadeAtual + 1 }} / {{ funcionalidades.length }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Transition>
-    </Teleport>
-
     <!-- Funcionalidades -->
     <section id="features" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -337,6 +203,141 @@
         </div>
       </div>
     </section>
+
+    <!-- Galeria de Funcionalidades -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Veja o Sistema em <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Ação</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
+            Interface intuitiva e moderna para gestão completa do seu negócio
+          </p>
+          <p class="text-sm text-blue-600 font-semibold">
+            {{ funcionalidades.length }} funcionalidades disponíveis
+          </p>
+        </div>
+
+        <!-- Grid de Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div 
+            v-for="func in funcionalidades" 
+            :key="func.id"
+            @click="abrirModal(func.id)"
+            class="gallery-card cursor-pointer"
+          >
+            <div class="gallery-card-inner">
+              <div class="gallery-thumbnail">
+                <img 
+                  v-if="func.tipo === 'imagem'"
+                  :src="`/assets/images/${func.midia}`" 
+                  :alt="func.titulo"
+                  class="w-full h-48 object-cover"
+                />
+                <div v-else class="w-full h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                  <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
+                  </svg>
+                </div>
+                <div class="gallery-overlay">
+                  <div class="text-white text-center">
+                    <div class="text-4xl mb-2">{{ func.icone }}</div>
+                    <p class="text-sm font-semibold">Clique para visualizar</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">{{ func.titulo }}</h3>
+                <p class="text-sm text-gray-600">{{ func.descricao }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal/Lightbox -->
+    <Teleport to="body">
+      <Transition name="modal">
+        <div 
+          v-if="modalAberto" 
+          class="modal-backdrop"
+          @click.self="fecharModal"
+        >
+          <div class="modal-container">
+            <button 
+              @click="fecharModal"
+              class="modal-close"
+              aria-label="Fechar"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+
+            <button 
+              v-if="funcionalidadeAtual > 0"
+              @click="navegarAnterior"
+              class="modal-nav modal-nav-prev"
+              aria-label="Anterior"
+            >
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+
+            <button 
+              v-if="funcionalidadeAtual < funcionalidades.length - 1"
+              @click="navegarProximo"
+              class="modal-nav modal-nav-next"
+              aria-label="Próximo"
+            >
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <div class="modal-content">
+              <div v-if="funcionalidades[funcionalidadeAtual]" class="modal-media">
+                <img 
+                  v-if="funcionalidades[funcionalidadeAtual].tipo === 'imagem'"
+                  :src="`/assets/images/${funcionalidades[funcionalidadeAtual].midia}`"
+                  :alt="funcionalidades[funcionalidadeAtual].titulo"
+                  class="max-w-full max-h-[80vh] mx-auto rounded-lg shadow-2xl"
+                />
+                <video 
+                  v-else
+                  :src="`/assets/images/${funcionalidades[funcionalidadeAtual].midia}`"
+                  controls
+                  class="max-w-full max-h-[80vh] mx-auto rounded-lg shadow-2xl"
+                />
+                
+                <div class="modal-info">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-2xl font-bold text-white mb-2">
+                        {{ funcionalidades[funcionalidadeAtual].icone }} {{ funcionalidades[funcionalidadeAtual].titulo }}
+                      </h3>
+                      <p class="text-blue-100">{{ funcionalidades[funcionalidadeAtual].descricao }}</p>
+                    </div>
+                    <div class="text-white text-sm">
+                      {{ funcionalidadeAtual + 1 }} / {{ funcionalidades.length }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
+
 
     <!-- Benefícios -->
     <section id="benefits" class="py-20 bg-gray-50">
