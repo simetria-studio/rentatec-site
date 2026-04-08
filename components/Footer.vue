@@ -32,10 +32,11 @@
           <div>
             <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
             <ul class="space-y-2">
-              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Início</a></li>
-              <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">Sobre</a></li>
-              <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Diferenciais</a></li>
-              <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contato</a></li>
+              <li><NuxtLink to="/" class="text-gray-400 hover:text-white transition-colors">Inicio</NuxtLink></li>
+              <li><NuxtLink to="/x-erp" class="text-gray-400 hover:text-white transition-colors">Solucoes</NuxtLink></li>
+              <li><NuxtLink to="/contact" class="text-gray-400 hover:text-white transition-colors">Contato</NuxtLink></li>
+              <li><NuxtLink to="/terms-of-use" class="text-gray-400 hover:text-white transition-colors">Termos de Uso</NuxtLink></li>
+              <li><NuxtLink to="/privacy-policy" class="text-gray-400 hover:text-white transition-colors">Politica de Privacidade</NuxtLink></li>
             </ul>
           </div>
           
