@@ -1,11 +1,11 @@
 <template>
   <nav class="fixed z-50 w-full bg-gradient-to-r from-blue-900 to-blue-800 shadow-lg">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="flex justify-between h-20">
+      <div class="flex justify-between h-16 md:h-20">
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <NuxtLink to="/">
-              <img class="h-14" src="~/assets/images/logo-white.png" alt="Rentatec Logo" />
+              <img class="w-auto h-9 max-w-[220px] sm:h-10 sm:max-w-[260px] md:h-11 md:max-w-[340px] lg:h-12 lg:max-w-[380px]" src="~/assets/images/logo-white.png" alt="Rentatec Logo" />
             </NuxtLink>
           </div>
         </div>
@@ -34,23 +34,23 @@
                   </svg>
                   X-ERP Notas
                 </NuxtLink>
+                <NuxtLink to="/xerp-kanban" class="block flex items-center px-4 py-3 text-sm text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-700">
+                  <svg class="mr-3 w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h10M4 18h7M17 12l3 3m0 0l-3 3m3-3h-8"></path>
+                  </svg>
+                  X-ERP Kanban
+                </NuxtLink>
                 <NuxtLink to="/servicos" class="block flex items-center px-4 py-3 text-sm text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-700">
                   <svg class="mr-3 w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                   </svg>
-                  Softwares Personalizados
+                  Software Personalizado
                 </NuxtLink>
                 <NuxtLink to="/integracoes" class="block flex items-center px-4 py-3 text-sm text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-700">
                   <svg class="mr-3 w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
                   Integração
-                </NuxtLink>
-                <NuxtLink to="/pipefy" class="block flex items-center px-4 py-3 text-sm text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-700">
-                  <svg class="mr-3 w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-                  </svg>
-                  Pipefy
                 </NuxtLink>
                 <NuxtLink to="/mobile" class="block flex items-center px-4 py-3 text-sm text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-700">
                   <svg class="mr-3 w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,13 @@
                   <svg class="mr-3 w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
-                  Beequest
+                  Bequest
+                </NuxtLink>
+                <NuxtLink to="/pipefy" class="block flex items-center px-4 py-3 text-sm text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-700">
+                  <svg class="mr-3 w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                  </svg>
+                  Pipefy
                 </NuxtLink>
               </div>
             </div>
@@ -99,20 +105,23 @@
         <NuxtLink to="/xerp-notas" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
           XERP Notas
         </NuxtLink>
+        <NuxtLink to="/xerp-kanban" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
+          X-ERP Kanban
+        </NuxtLink>
         <NuxtLink to="/servicos" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
-          Softwares Personalizados
+          Software Personalizado
         </NuxtLink>
         <NuxtLink to="/integracoes" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
           Integração
-        </NuxtLink>
-        <NuxtLink to="/pipefy" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
-          Pipefy
         </NuxtLink>
         <NuxtLink to="/mobile" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
           Desenvolvimento Mobile
         </NuxtLink>
         <NuxtLink to="/beequest" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
-          Beequest
+          Bequest
+        </NuxtLink>
+        <NuxtLink to="/pipefy" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
+          Pipefy
         </NuxtLink>
         <NuxtLink to="/blog" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
           Blog

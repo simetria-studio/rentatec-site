@@ -547,15 +547,51 @@
           </p>
         </div>
 
-        <!-- Pipefy Form Embed -->
-        <div class="reveal-element w-full bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-2xl">
-          <iframe 
-            src="https://app.pipefy.com/public/form/kDESehIn?origem=1044463398&o_que_voc_gostaria_de_ajuda_para_sua_empresa=Gostaria%20de%20uma%20demonstra%C3%A7%C3%A3o%20do%20X-ERP%20Notas&embedded=true" 
-            frameborder="0" 
-            width="100%" 
-            height="800" 
-            class="w-full"
-          ></iframe>
+        <div class="reveal-element bg-white p-4 md:p-8 rounded-3xl shadow-2xl border border-slate-200">
+          <form class="space-y-5 max-w-3xl mx-auto" @submit.prevent="submitLeadForm">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div>
+                <label for="lead-name" class="block mb-1 text-sm font-medium text-gray-700">Nome completo *</label>
+                <input id="lead-name" v-model="leadForm.name" type="text" required class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="Seu nome" />
+              </div>
+              <div>
+                <label for="lead-email" class="block mb-1 text-sm font-medium text-gray-700">E-mail *</label>
+                <input id="lead-email" v-model="leadForm.email" type="email" required class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="seu@email.com" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div>
+                <label for="lead-phone" class="block mb-1 text-sm font-medium text-gray-700">Telefone / WhatsApp</label>
+                <input id="lead-phone" v-model="leadForm.phone" type="tel" class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="(00) 00000-0000" />
+              </div>
+              <div>
+                <label for="lead-company" class="block mb-1 text-sm font-medium text-gray-700">Empresa</label>
+                <input id="lead-company" v-model="leadForm.company_name" type="text" class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="Nome da empresa" />
+              </div>
+            </div>
+
+            <div>
+              <label for="lead-notes" class="block mb-1 text-sm font-medium text-gray-700">Mensagem</label>
+              <textarea id="lead-notes" v-model="leadForm.notes" rows="4" class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="Conte um pouco sobre sua operação fiscal e como podemos ajudar."></textarea>
+            </div>
+
+            <div
+              v-if="leadMessage"
+              class="rounded-lg border px-4 py-3 text-sm"
+              :class="leadMessageType === 'success' ? 'border-green-200 bg-green-50 text-green-700' : 'border-red-200 bg-red-50 text-red-700'"
+            >
+              {{ leadMessage }}
+            </div>
+
+            <button
+              type="submit"
+              :disabled="isSubmitting"
+              class="w-full px-6 py-3 font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {{ isSubmitting ? 'Enviando...' : 'Enviar' }}
+            </button>
+          </form>
         </div>
       </div>
     </section>
@@ -569,7 +605,19 @@ export default {
   layout: 'default',
   data() {
     return {
-      billingPeriod: 'annual' // 'monthly' or 'annual'
+      billingPeriod: 'annual', // 'monthly' or 'annual'
+      leadFormKey: '3a057e1c-0121-4aa4-9dd4-549253e54972',
+      leadsApiEndpoint: 'https://suporte.rentatec.com.br/api/leads/capture',
+      isSubmitting: false,
+      leadMessage: '',
+      leadMessageType: 'success',
+      leadForm: {
+        name: '',
+        email: '',
+        phone: '',
+        company_name: '',
+        notes: ''
+      }
     }
   },
   computed: {
@@ -613,6 +661,50 @@ export default {
     document.querySelectorAll('.reveal-element').forEach(el => {
       observer.observe(el);
     });
+
+  },
+  methods: {
+    async submitLeadForm() {
+      if (this.isSubmitting) return
+
+      this.isSubmitting = true
+      this.leadMessage = ''
+
+      try {
+        const response = await fetch(this.leadsApiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({
+            ...this.leadForm,
+            form_key: this.leadFormKey
+          })
+        })
+
+        const data = await response.json()
+
+        if (!response.ok || !data.success) {
+          throw new Error(data.message || 'Não foi possível enviar o formulário.')
+        }
+
+        this.leadMessageType = 'success'
+        this.leadMessage = data.message || 'Formulário enviado com sucesso!'
+        this.leadForm = {
+          name: '',
+          email: '',
+          phone: '',
+          company_name: '',
+          notes: ''
+        }
+      } catch (error) {
+        this.leadMessageType = 'error'
+        this.leadMessage = error instanceof Error ? error.message : 'Ocorreu um erro ao enviar.'
+      } finally {
+        this.isSubmitting = false
+      }
+    }
   }
 }
 </script>

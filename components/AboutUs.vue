@@ -114,42 +114,46 @@
             Nossa <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Jornada</span>
           </h3>
           <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
-            De uma startup inovadora a referência em soluções empresariais
+            Evoluímos do ERP para uma plataforma de gestão mais completa, com lançamentos como X-ERP Notas e X-ERP Kanban para integrar a operação da empresa como um todo.
           </p>
         </div>
         
-        <div class="relative max-w-5xl mx-auto px-4">
-          <!-- Linha conectora com gradiente -->
-          <div class="absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full hidden md:block timeline-line">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 rounded-full blur-sm opacity-50"></div>
+        <div class="relative max-w-6xl mx-auto px-4">
+          <!-- Linha conectora com identidade da marca -->
+          <div class="absolute top-12 left-0 right-0 h-2 rounded-full hidden md:block timeline-line" style="background-color: rgba(4, 50, 89, 0.16);">
+            <div class="absolute inset-0 rounded-full" style="background: linear-gradient(90deg, #043259 0%, #2563eb 32%, #8b5cf6 68%, #ec4899 100%);"></div>
+            <div class="absolute inset-0 rounded-full blur-sm opacity-40" style="background: linear-gradient(90deg, rgba(4, 50, 89, 0.65) 0%, rgba(37, 99, 235, 0.45) 32%, rgba(139, 92, 246, 0.45) 68%, rgba(236, 72, 153, 0.45) 100%);"></div>
           </div>
           
           <!-- Timeline items -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 relative z-10">
             <!-- 2008 - Fundação -->
             <div class="timeline-item text-center group">
               <div class="relative inline-block">
                 <!-- Círculo principal com glassmorphism -->
-                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden border-4 border-white">
+                <div class="w-24 h-24 mx-auto rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:-translate-y-1 relative overflow-hidden border-4 border-white" style="background: linear-gradient(135deg, #043259 0%, #3b82f6 100%);">
                   <!-- Brilho interno -->
                   <div class="absolute inset-0 bg-white/20 rounded-full"></div>
-                  <div class="absolute inset-0 bg-gradient-to-t from-blue-700/30 to-transparent rounded-full"></div>
+                  <div class="absolute inset-0 rounded-full" style="background: linear-gradient(to top, rgba(4, 50, 89, 0.32), transparent);"></div>
                   
                   <!-- Ano -->
                   <span class="text-white font-extrabold text-xl relative z-10 drop-shadow-lg">2008</span>
                   
                   <!-- Efeito de anel pulsante -->
-                  <div class="absolute inset-0 rounded-full border-2 border-blue-400 animate-ping opacity-20"></div>
+                  <div class="absolute inset-0 rounded-full border-2 animate-ping opacity-20" style="border-color: rgba(4, 50, 89, 0.55);"></div>
                 </div>
                 
                 <!-- Ponto conectivo -->
-                <div class="hidden md:block absolute top-1/2 -right-8 w-8 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 transform -translate-y-1/2"></div>
+                <div class="hidden md:flex absolute top-1/2 -right-10 items-center gap-2 transform -translate-y-1/2">
+                  <div class="w-6 h-3 rounded-full" style="background-color: #043259;"></div>
+                  <div class="w-8 h-1.5 rounded-full bg-blue-400/70"></div>
+                </div>
               </div>
               
-              <div class="mt-6 space-y-2">
-                <h4 class="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors duration-300">Fundação</h4>
+              <div class="mt-6 space-y-2 px-3 py-4 rounded-2xl bg-white/85 backdrop-blur-sm shadow-lg border border-slate-100">
+                <h4 class="font-bold text-lg text-gray-900 transition-colors duration-300 group-hover:text-slate-900">Fundação</h4>
                 <p class="text-sm text-gray-600 leading-relaxed px-2">
-                  Início da jornada com foco em soluções inovadoras
+                  Começo da Rentatec com foco em tecnologia aplicada à gestão e na construção de soluções empresariais sob medida.
                 </p>
               </div>
             </div>
@@ -157,22 +161,25 @@
             <!-- 2012 - Expansão -->
             <div class="timeline-item text-center group">
               <div class="relative inline-block">
-                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden border-4 border-white">
+                <div class="w-24 h-24 mx-auto rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:-translate-y-1 relative overflow-hidden border-4 border-white" style="background: linear-gradient(135deg, #043259 0%, #6366f1 65%, #8b5cf6 100%);">
                   <div class="absolute inset-0 bg-white/20 rounded-full"></div>
-                  <div class="absolute inset-0 bg-gradient-to-t from-indigo-700/30 to-transparent rounded-full"></div>
+                  <div class="absolute inset-0 rounded-full" style="background: linear-gradient(to top, rgba(4, 50, 89, 0.3), transparent);"></div>
                   
                   <span class="text-white font-extrabold text-xl relative z-10 drop-shadow-lg">2012</span>
                   
-                  <div class="absolute inset-0 rounded-full border-2 border-indigo-400 animate-ping opacity-20 animation-delay-500"></div>
+                  <div class="absolute inset-0 rounded-full border-2 animate-ping opacity-20 animation-delay-500" style="border-color: rgba(99, 102, 241, 0.55);"></div>
                 </div>
                 
-                <div class="hidden md:block absolute top-1/2 -right-8 w-8 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 transform -translate-y-1/2"></div>
+                <div class="hidden md:flex absolute top-1/2 -right-10 items-center gap-2 transform -translate-y-1/2">
+                  <div class="w-6 h-3 rounded-full" style="background-color: #6366f1;"></div>
+                  <div class="w-8 h-1.5 rounded-full bg-purple-400/70"></div>
+                </div>
               </div>
               
-              <div class="mt-6 space-y-2">
-                <h4 class="font-bold text-lg text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">Expansão</h4>
+              <div class="mt-6 space-y-2 px-3 py-4 rounded-2xl bg-white/85 backdrop-blur-sm shadow-lg border border-slate-100">
+                <h4 class="font-bold text-lg text-gray-900 transition-colors duration-300 group-hover:text-slate-900">Expansão</h4>
                 <p class="text-sm text-gray-600 leading-relaxed px-2">
-                  Crescimento da base de clientes e novos mercados
+                  Crescimento da base de clientes, amadurecimento do produto e ampliação da atuação em diferentes segmentos.
                 </p>
               </div>
             </div>
@@ -180,49 +187,52 @@
             <!-- 2016 - Inovação -->
             <div class="timeline-item text-center group">
               <div class="relative inline-block">
-                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden border-4 border-white">
+                <div class="w-24 h-24 mx-auto rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:-translate-y-1 relative overflow-hidden border-4 border-white" style="background: linear-gradient(135deg, #043259 0%, #8b5cf6 55%, #d946ef 100%);">
                   <div class="absolute inset-0 bg-white/20 rounded-full"></div>
-                  <div class="absolute inset-0 bg-gradient-to-t from-purple-700/30 to-transparent rounded-full"></div>
+                  <div class="absolute inset-0 rounded-full" style="background: linear-gradient(to top, rgba(4, 50, 89, 0.28), transparent);"></div>
                   
                   <span class="text-white font-extrabold text-xl relative z-10 drop-shadow-lg">2016</span>
                   
-                  <div class="absolute inset-0 rounded-full border-2 border-purple-400 animate-ping opacity-20 animation-delay-1000"></div>
+                  <div class="absolute inset-0 rounded-full border-2 animate-ping opacity-20 animation-delay-1000" style="border-color: rgba(139, 92, 246, 0.55);"></div>
                 </div>
                 
-                <div class="hidden md:block absolute top-1/2 -right-8 w-8 h-2 bg-gradient-to-r from-purple-500 to-pink-500 transform -translate-y-1/2"></div>
+                <div class="hidden md:flex absolute top-1/2 -right-10 items-center gap-2 transform -translate-y-1/2">
+                  <div class="w-6 h-3 rounded-full" style="background-color: #8b5cf6;"></div>
+                  <div class="w-8 h-1.5 rounded-full bg-pink-400/70"></div>
+                </div>
               </div>
               
-              <div class="mt-6 space-y-2">
-                <h4 class="font-bold text-lg text-gray-900 group-hover:text-purple-600 transition-colors duration-300">Inovação</h4>
+              <div class="mt-6 space-y-2 px-3 py-4 rounded-2xl bg-white/85 backdrop-blur-sm shadow-lg border border-slate-100">
+                <h4 class="font-bold text-lg text-gray-900 transition-colors duration-300 group-hover:text-slate-900">Inovação</h4>
                 <p class="text-sm text-gray-600 leading-relaxed px-2">
-                  Lançamento de produtos disruptivos e tecnologias avançadas
+                  Evolução do ecossistema com novos produtos para ampliar o controle operacional, fiscal e dos processos.
                 </p>
               </div>
             </div>
             
-            <!-- 2026 - Hoje -->
+            <!-- Agora -->
             <div class="timeline-item text-center group">
               <div class="relative inline-block">
-                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden border-4 border-white">
+                <div class="w-24 h-24 mx-auto rounded-full flex items-center justify-center shadow-xl transition-all duration-500 transform group-hover:scale-110 group-hover:-translate-y-1 relative overflow-hidden border-4 border-white" style="background: linear-gradient(135deg, #043259 0%, #ec4899 60%, #e11d48 100%);">
                   <div class="absolute inset-0 bg-white/20 rounded-full"></div>
-                  <div class="absolute inset-0 bg-gradient-to-t from-rose-700/30 to-transparent rounded-full"></div>
+                  <div class="absolute inset-0 rounded-full" style="background: linear-gradient(to top, rgba(4, 50, 89, 0.28), transparent);"></div>
                   
-                  <!-- Badge "Hoje" com ícone -->
+                  <!-- Badge "Agora" com ícone -->
                   <div class="flex flex-col items-center relative z-10">
                     <svg class="w-8 h-8 text-white mb-1 drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-white font-extrabold text-xs drop-shadow-lg">2026</span>
+                    <span class="text-white font-extrabold text-xs drop-shadow-lg uppercase tracking-wide">Agora</span>
                   </div>
                   
-                  <div class="absolute inset-0 rounded-full border-2 border-pink-400 animate-ping opacity-30 animation-delay-1500"></div>
+                  <div class="absolute inset-0 rounded-full border-2 animate-ping opacity-30 animation-delay-1500" style="border-color: rgba(236, 72, 153, 0.55);"></div>
                 </div>
               </div>
               
-              <div class="mt-6 space-y-2">
-                <h4 class="font-bold text-lg text-gray-900 group-hover:text-pink-600 transition-colors duration-300">Hoje</h4>
+              <div class="mt-6 space-y-2 px-3 py-4 rounded-2xl bg-white/85 backdrop-blur-sm shadow-lg border border-slate-100">
+                <h4 class="font-bold text-lg text-gray-900 transition-colors duration-300 group-hover:text-slate-900">Hoje</h4>
                 <p class="text-sm text-gray-600 leading-relaxed px-2">
-                  Líder em transformação digital com IA e cloud
+                  Portfólio mais completo para gestão da empresa como um todo, com ERP, fiscal, processos, integrações e soluções sob medida.
                 </p>
               </div>
             </div>

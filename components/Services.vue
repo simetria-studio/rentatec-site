@@ -48,40 +48,33 @@
       <div class="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3 reveal-element">
         <!-- X-ERP -->
         <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-blue-300/50 hover:-translate-y-2 group">
-          <!-- Badge de destaque -->
           <div class="absolute top-4 right-4 z-20 px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-full shadow-md">
             Mais Vendido
           </div>
-          
+
           <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-700">
-            <!-- Efeito glassmorphism -->
             <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
             <div class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-            
-            <!-- Padrão de fundo -->
             <div class="absolute inset-0 opacity-10 service-pattern-modern"></div>
-            
-            <!-- Ícone com efeito 3D -->
+
             <div class="relative z-10 p-6 transition-all duration-500 transform bg-white/10 rounded-2xl backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6">
               <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
               </svg>
             </div>
-            
-            <!-- Shine effect -->
+
             <div class="absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:opacity-100 shine-effect"></div>
           </div>
-          
+
           <div class="p-7">
-            <div class="flex gap-3 justify-between items-start mb-3">
+            <div class="mb-3">
               <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-600">X-ERP</h3>
-              <span class="px-2 py-1 text-xs font-semibold text-blue-700 bg-blue-100 rounded-md">ERP</span>
             </div>
-            
+
             <p class="mb-6 text-gray-600 leading-relaxed">
               <strong class="text-gray-900">Gerencie tudo em um só lugar:</strong> controle financeiro, estoque, vendas e muito mais. Ganhe até <strong class="text-blue-600">40% mais eficiência</strong> operacional.
             </p>
-            
+
             <NuxtLink to="/x-erp" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-blue-600 bg-blue-50 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:gap-3 group/link">
               <span>Explorar solução</span>
               <svg class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,69 +83,33 @@
             </NuxtLink>
           </div>
         </div>
-        
-        <!-- Pipefy -->
-        <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-purple-300/50 hover:-translate-y-2 group">
-          <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
-            <div class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <div class="absolute inset-0 opacity-10 service-pattern-modern"></div>
-            
-            <div class="relative z-10 p-6 transition-all duration-500 transform bg-white/10 rounded-2xl backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6">
-              <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-              </svg>
-            </div>
-            
-            <div class="absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:opacity-100 shine-effect"></div>
-          </div>
-          
-          <div class="p-7">
-            <div class="flex gap-3 justify-between items-start mb-3">
-              <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-purple-600">Pipefy</h3>
-              <span class="px-2 py-1 text-xs font-semibold text-purple-700 bg-purple-100 rounded-md">Low-Code</span>
-            </div>
-            
-            <p class="mb-6 text-gray-600 leading-relaxed">
-              <strong class="text-gray-900">Automatize processos sem programar:</strong> crie fluxos inteligentes em minutos. Reduza <strong class="text-purple-600">até 70% do tempo</strong> em tarefas repetitivas.
-            </p>
-            
-            <NuxtLink to="/pipefy" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-purple-600 bg-purple-50 rounded-lg transition-all duration-300 hover:bg-purple-100 hover:gap-3 group/link">
-              <span>Explorar solução</span>
-              <svg class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </NuxtLink>
-          </div>
-        </div>
-        
-        <!-- Beequest -->
-        <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-amber-300/50 hover:-translate-y-2 group">
-          <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-amber-500 via-orange-500 to-yellow-600">
+
+        <!-- X-ERP Notas -->
+        <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-orange-300/50 hover:-translate-y-2 group">
+          <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-orange-500 via-orange-600 to-red-600">
             <div class="absolute inset-0 bg-gradient-to-t from-orange-900/30 to-transparent"></div>
             <div class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-0 opacity-10 service-pattern-modern"></div>
-            
+
             <div class="relative z-10 p-6 transition-all duration-500 transform bg-white/10 rounded-2xl backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6">
               <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
               </svg>
             </div>
-            
+
             <div class="absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:opacity-100 shine-effect"></div>
           </div>
-          
+
           <div class="p-7">
-            <div class="flex gap-3 justify-between items-start mb-3">
-              <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-amber-600">Beequest</h3>
-              <span class="px-2 py-1 text-xs font-semibold text-amber-700 bg-amber-100 rounded-md">Pesquisas</span>
+            <div class="mb-3">
+              <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-orange-600">X-ERP Notas</h3>
             </div>
-            
+
             <p class="mb-6 text-gray-600 leading-relaxed">
-              <strong class="text-gray-900">Decisões baseadas em dados:</strong> colete feedback validado por especialistas. Aumente a <strong class="text-amber-600">precisão estratégica</strong> do seu negócio.
+              <strong class="text-gray-900">Automatize a gestão fiscal:</strong> capture, audite e integre documentos fiscais com mais velocidade, conformidade e menos trabalho manual.
             </p>
-            
-            <NuxtLink to="/beequest" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-amber-700 bg-amber-50 rounded-lg transition-all duration-300 hover:bg-amber-100 hover:gap-3 group/link">
+
+            <NuxtLink to="/xerp-notas" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-orange-600 bg-orange-50 rounded-lg transition-all duration-300 hover:bg-orange-100 hover:gap-3 group/link">
               <span>Explorar solução</span>
               <svg class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -160,33 +117,66 @@
             </NuxtLink>
           </div>
         </div>
-        
+
+        <!-- X-ERP Kanban -->
+        <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-cyan-300/50 hover:-translate-y-2 group">
+          <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-cyan-600 via-sky-600 to-blue-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-0 opacity-10 service-pattern-modern"></div>
+
+            <div class="relative z-10 p-6 transition-all duration-500 transform bg-white/10 rounded-2xl backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6">
+              <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h10M4 18h7M17 12l3 3m0 0l-3 3m3-3h-8"></path>
+              </svg>
+            </div>
+
+            <div class="absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:opacity-100 shine-effect"></div>
+          </div>
+
+          <div class="p-7">
+            <div class="mb-3">
+              <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-cyan-700">X-ERP Kanban</h3>
+            </div>
+
+            <p class="mb-6 text-gray-600 leading-relaxed">
+              <strong class="text-gray-900">Organize e automatize a operação:</strong> acompanhe processos, responsáveis e SLAs com mais visibilidade e menos gargalos.
+            </p>
+
+            <NuxtLink to="/xerp-kanban" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-cyan-700 bg-cyan-50 rounded-lg transition-all duration-300 hover:bg-cyan-100 hover:gap-3 group/link">
+              <span>Explorar solução</span>
+              <svg class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </NuxtLink>
+          </div>
+        </div>
+
         <!-- Software Personalizado -->
         <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-emerald-300/50 hover:-translate-y-2 group">
           <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700">
             <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent"></div>
             <div class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-0 opacity-10 service-pattern-modern"></div>
-            
+
             <div class="relative z-10 p-6 transition-all duration-500 transform bg-white/10 rounded-2xl backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6">
               <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
               </svg>
             </div>
-            
+
             <div class="absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:opacity-100 shine-effect"></div>
           </div>
-          
+
           <div class="p-7">
-            <div class="flex gap-3 justify-between items-start mb-3">
+            <div class="mb-3">
               <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-emerald-600">Software Personalizado</h3>
-              <span class="px-2 py-1 text-xs font-semibold text-emerald-700 bg-emerald-100 rounded-md">Custom</span>
             </div>
-            
+
             <p class="mb-6 text-gray-600 leading-relaxed">
               <strong class="text-gray-900">Solução sob medida para você:</strong> desenvolvemos a ferramenta perfeita para seus processos únicos. <strong class="text-emerald-600">100% alinhado</strong> ao seu negócio.
             </p>
-            
+
             <NuxtLink to="/servicos" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-emerald-600 bg-emerald-50 rounded-lg transition-all duration-300 hover:bg-emerald-100 hover:gap-3 group/link">
               <span>Explorar solução</span>
               <svg class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,33 +185,32 @@
             </NuxtLink>
           </div>
         </div>
-        
+
         <!-- Integração -->
         <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-rose-300/50 hover:-translate-y-2 group">
           <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-rose-600 via-red-600 to-pink-700">
             <div class="absolute inset-0 bg-gradient-to-t from-rose-900/30 to-transparent"></div>
             <div class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-0 opacity-10 service-pattern-modern"></div>
-            
+
             <div class="relative z-10 p-6 transition-all duration-500 transform bg-white/10 rounded-2xl backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6">
               <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
               </svg>
             </div>
-            
+
             <div class="absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:opacity-100 shine-effect"></div>
           </div>
-          
+
           <div class="p-7">
-            <div class="flex gap-3 justify-between items-start mb-3">
+            <div class="mb-3">
               <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-rose-600">Integração</h3>
-              <span class="px-2 py-1 text-xs font-semibold text-rose-700 bg-rose-100 rounded-md">API</span>
             </div>
-            
+
             <p class="mb-6 text-gray-600 leading-relaxed">
               <strong class="text-gray-900">Conecte todo seu ecossistema:</strong> integre sistemas, plataformas e ferramentas. Elimine <strong class="text-rose-600">trabalho manual</strong> entre aplicações.
             </p>
-            
+
             <NuxtLink to="/integracoes" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-rose-600 bg-rose-50 rounded-lg transition-all duration-300 hover:bg-rose-100 hover:gap-3 group/link">
               <span>Explorar solução</span>
               <svg class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -230,33 +219,32 @@
             </NuxtLink>
           </div>
         </div>
-        
+
         <!-- Desenvolvimento Mobile -->
         <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-violet-300/50 hover:-translate-y-2 group">
           <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-violet-600 via-indigo-600 to-purple-700">
             <div class="absolute inset-0 bg-gradient-to-t from-violet-900/30 to-transparent"></div>
             <div class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="absolute inset-0 opacity-10 service-pattern-modern"></div>
-            
+
             <div class="relative z-10 p-6 transition-all duration-500 transform bg-white/10 rounded-2xl backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6">
               <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
               </svg>
             </div>
-            
+
             <div class="absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:opacity-100 shine-effect"></div>
           </div>
-          
+
           <div class="p-7">
-            <div class="flex gap-3 justify-between items-start mb-3">
+            <div class="mb-3">
               <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-violet-600">Apps Mobile</h3>
-              <span class="px-2 py-1 text-xs font-semibold text-violet-700 bg-violet-100 rounded-md">Mobile</span>
             </div>
-            
+
             <p class="mb-6 text-gray-600 leading-relaxed">
               <strong class="text-gray-900">Alcance clientes onde eles estão:</strong> apps nativos iOS e Android com a melhor experiência. Expanda seu <strong class="text-violet-600">alcance digital</strong>.
             </p>
-            
+
             <NuxtLink to="/mobile" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-violet-600 bg-violet-50 rounded-lg transition-all duration-300 hover:bg-violet-100 hover:gap-3 group/link">
               <span>Explorar solução</span>
               <svg class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -265,8 +253,42 @@
             </NuxtLink>
           </div>
         </div>
+
+        <!-- Beequest -->
+        <div class="overflow-hidden relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-amber-300/50 hover:-translate-y-2 group">
+          <div class="flex overflow-hidden relative justify-center items-center h-56 bg-gradient-to-br from-amber-500 via-orange-500 to-yellow-600">
+            <div class="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-0 opacity-10 service-pattern-modern"></div>
+
+            <div class="relative z-10 p-6 transition-all duration-500 transform bg-white/10 rounded-2xl backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6">
+              <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-3.866 0-7 1.79-7 4s3.134 4 7 4 7-1.79 7-4-3.134-4-7-4zm0 0V5m0 11v3"></path>
+              </svg>
+            </div>
+
+            <div class="absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:opacity-100 shine-effect"></div>
+          </div>
+
+          <div class="p-7">
+            <div class="mb-3">
+              <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-amber-600">Beequest</h3>
+            </div>
+
+            <p class="mb-6 text-gray-600 leading-relaxed">
+              <strong class="text-gray-900">Automação inteligente para atendimento:</strong> acelere respostas, organize demandas e aumente a produtividade da equipe com IA aplicada.
+            </p>
+
+            <NuxtLink to="/beequest" class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-amber-700 bg-amber-50 rounded-lg transition-all duration-300 hover:bg-amber-100 hover:gap-3 group/link">
+              <span>Explorar solução</span>
+              <svg class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </NuxtLink>
+          </div>
+        </div>
       </div>
-      
+
       <!-- CTA modernizado -->
       <div class="mt-20 text-center reveal-element">
         <div class="inline-flex flex-col gap-6 items-center">

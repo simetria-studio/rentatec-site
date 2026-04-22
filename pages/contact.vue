@@ -26,14 +26,43 @@
     <section class="relative py-16">
       <div class="px-4 mx-auto max-w-5xl sm:px-6 lg:px-8">
         <div class="bg-white p-4 md:p-8 rounded-3xl shadow-soft">
-          <!-- Pipefy Form -->
-          <div class="w-full">
-            <iframe 
-              src="https://app.pipefy.com/public/form/kDESehIn?origem=1044463398&embedded=true" 
-              frameborder="0" 
-              class="w-full min-h-[800px] rounded-2xl"
-            ></iframe>
-          </div>
+          <form class="space-y-5 max-w-3xl mx-auto" @submit.prevent="submitLeadForm">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div>
+                <label for="lead-name" class="block mb-1 text-sm font-medium text-gray-700">Nome completo *</label>
+                <input id="lead-name" v-model="leadForm.name" type="text" required class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Seu nome" />
+              </div>
+              <div>
+                <label for="lead-email" class="block mb-1 text-sm font-medium text-gray-700">E-mail *</label>
+                <input id="lead-email" v-model="leadForm.email" type="email" required class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="seu@email.com" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div>
+                <label for="lead-phone" class="block mb-1 text-sm font-medium text-gray-700">Telefone / WhatsApp</label>
+                <input id="lead-phone" v-model="leadForm.phone" type="tel" class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="(00) 00000-0000" />
+              </div>
+              <div>
+                <label for="lead-company" class="block mb-1 text-sm font-medium text-gray-700">Empresa</label>
+                <input id="lead-company" v-model="leadForm.company_name" type="text" class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Nome da empresa" />
+              </div>
+            </div>
+
+            <div>
+              <label for="lead-notes" class="block mb-1 text-sm font-medium text-gray-700">Mensagem</label>
+              <textarea id="lead-notes" v-model="leadForm.notes" rows="4" class="px-4 py-3 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Como podemos ajudar?"></textarea>
+            </div>
+
+            <div v-if="leadMessage" class="rounded-lg border px-4 py-3 text-sm"
+              :class="leadMessageType === 'success' ? 'border-green-200 bg-green-50 text-green-700' : 'border-red-200 bg-red-50 text-red-700'">
+              {{ leadMessage }}
+            </div>
+
+            <button type="submit" :disabled="isSubmitting" class="w-full px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed">
+              {{ isSubmitting ? 'Enviando...' : 'Enviar' }}
+            </button>
+          </form>
         </div>
       </div>
     </section>
@@ -43,7 +72,59 @@
 </template>
 
 <script setup>
-// Lógica simplificada pois o formulário é externo
+import { reactive, ref } from 'vue'
+
+const leadFormKey = '5f47a51c-1533-4ce6-b0a4-e525f2598853'
+const leadsApiEndpoint = 'https://suporte.rentatec.com.br/api/leads/capture'
+const isSubmitting = ref(false)
+const leadMessage = ref('')
+const leadMessageType = ref('success')
+const leadForm = reactive({
+  name: '',
+  email: '',
+  phone: '',
+  company_name: '',
+  notes: ''
+})
+
+const submitLeadForm = async () => {
+  if (isSubmitting.value) return
+
+  isSubmitting.value = true
+  leadMessage.value = ''
+
+  try {
+    const response = await fetch(leadsApiEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        ...leadForm,
+        form_key: leadFormKey
+      })
+    })
+
+    const data = await response.json()
+    if (!response.ok || !data.success) {
+      throw new Error(data.message || 'Não foi possível enviar o formulário.')
+    }
+
+    leadMessageType.value = 'success'
+    leadMessage.value = data.message || 'Formulário enviado com sucesso!'
+    leadForm.name = ''
+    leadForm.email = ''
+    leadForm.phone = ''
+    leadForm.company_name = ''
+    leadForm.notes = ''
+  } catch (error) {
+    leadMessageType.value = 'error'
+    leadMessage.value = error instanceof Error ? error.message : 'Ocorreu um erro ao enviar.'
+  } finally {
+    isSubmitting.value = false
+  }
+}
 </script>
 
 <style>
