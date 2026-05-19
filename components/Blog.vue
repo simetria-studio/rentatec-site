@@ -1,41 +1,47 @@
 <template>
-  <section class="py-20 bg-white">
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="mb-10 text-center">
-        <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Blog Rentatec</h2>
-        <p class="mx-auto mt-3 max-w-2xl text-lg text-gray-600">
-          Conteudos práticos sobre automação, gestão de processos e transformação digital.
-        </p>
-      </div>
-
-      <div class="grid gap-6 md:grid-cols-3">
-        <article class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-          <span class="text-sm font-semibold text-blue-700">Processos</span>
-          <h3 class="mt-2 text-xl font-bold text-gray-900">Padronização de fluxos sem retrabalho</h3>
-          <p class="mt-3 text-gray-600">Como estruturar etapas, aprovações e responsabilidades para ganhar previsibilidade.</p>
-        </article>
-
-        <article class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-          <span class="text-sm font-semibold text-blue-700">Automação</span>
-          <h3 class="mt-2 text-xl font-bold text-gray-900">Menos tarefas manuais no dia a dia</h3>
-          <p class="mt-3 text-gray-600">Exemplos práticos de automações para reduzir erros operacionais e tempo de execução.</p>
-        </article>
-
-        <article class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-          <span class="text-sm font-semibold text-blue-700">Gestão</span>
-          <h3 class="mt-2 text-xl font-bold text-gray-900">Dados atualizados para decidir melhor</h3>
-          <p class="mt-3 text-gray-600">Indicadores em tempo real para acompanhar performance e evoluir processos com segurança.</p>
-        </article>
-      </div>
-
-      <div class="mt-10 text-center">
-        <NuxtLink
-          to="/blog"
-          class="inline-flex items-center px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg transition-colors hover:bg-blue-700"
-        >
+  <section class="bg-slate-50 py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.18em] text-cyan-700">Conteúdo prático</p>
+          <h2 class="mt-3 text-3xl font-black tracking-tight text-slate-950 md:text-4xl">Ideias para organizar a operação</h2>
+        </div>
+        <NuxtLink to="/blog" class="inline-flex text-sm font-bold text-[#043259] hover:text-[#0b4779]">
           Ver todos os artigos
         </NuxtLink>
+      </div>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <article
+          v-for="post in posts"
+          :key="post.title"
+          class="rounded-xl border border-slate-200 bg-white p-6"
+        >
+          <span class="text-sm font-black uppercase tracking-[0.14em] text-slate-400">{{ post.category }}</span>
+          <h3 class="mt-3 text-xl font-black leading-tight text-slate-950">{{ post.title }}</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-600">{{ post.description }}</p>
+        </article>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+const posts = [
+  {
+    category: 'Processos',
+    title: 'Padronização de fluxos sem retrabalho',
+    description: 'Como estruturar etapas, aprovações e responsabilidades para ganhar previsibilidade.'
+  },
+  {
+    category: 'Automação',
+    title: 'Menos tarefas manuais no dia a dia',
+    description: 'Exemplos práticos para reduzir erros operacionais e tempo gasto em tarefas repetitivas.'
+  },
+  {
+    category: 'Gestão',
+    title: 'Dados atualizados para decidir melhor',
+    description: 'Indicadores para acompanhar performance, gargalos e evolução dos processos.'
+  }
+]
+</script>

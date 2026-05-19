@@ -62,7 +62,7 @@
                   <svg class="mr-3 w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
-                  Bequest
+                  Beequest
                 </NuxtLink>
                 <NuxtLink to="/pipefy" class="block flex items-center px-4 py-3 text-sm text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-700">
                   <svg class="mr-3 w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +118,7 @@
           Desenvolvimento Mobile
         </NuxtLink>
         <NuxtLink to="/beequest" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
-          Bequest
+          Beequest
         </NuxtLink>
         <NuxtLink to="/pipefy" class="block px-3 py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-200">
           Pipefy
