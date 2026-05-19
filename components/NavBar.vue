@@ -5,7 +5,14 @@
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <NuxtLink to="/">
-              <img class="h-8 w-auto max-w-[210px] sm:h-9 sm:max-w-[240px] lg:max-w-[270px]" src="~/assets/images/logo-white.png" alt="Rentatec Logo" />
+              <img
+                class="h-8 w-auto max-w-[210px] sm:h-9 sm:max-w-[240px] lg:max-w-[270px]"
+                src="~/assets/images/logo-white.png"
+                alt="Rentatec Logo"
+                width="270"
+                height="48"
+                style="display: block; width: min(270px, 70vw); height: auto; max-height: 36px; object-fit: contain;"
+              />
             </NuxtLink>
           </div>
         </div>

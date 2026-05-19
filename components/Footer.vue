@@ -30,7 +30,7 @@
           </div>
           
           <div>
-            <h3 class="mb-4 text-lg font-black text-white">Links rápidos</h3>
+            <h3 class="mb-4 text-lg font-black text-white" style="color: #fff;">Links rápidos</h3>
             <ul class="space-y-2">
               <li><NuxtLink to="/" class="text-slate-200 transition-colors hover:text-white">Início</NuxtLink></li>
               <li><NuxtLink to="/x-erp" class="text-slate-200 transition-colors hover:text-white">X-ERP</NuxtLink></li>
@@ -43,7 +43,7 @@
           </div>
           
           <div>
-            <h3 class="mb-4 text-lg font-black text-white">Contato</h3>
+            <h3 class="mb-4 text-lg font-black text-white" style="color: #fff;">Contato</h3>
             <ul class="space-y-3 text-slate-200">
               <li class="flex items-start gap-3">
                 <svg class="mt-0.5 h-5 w-5 shrink-0 text-cyan-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
