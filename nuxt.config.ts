@@ -14,11 +14,6 @@ export default defineNuxtConfig({
       '~/components/integration'
     ]
   },
-  nitro: {
-    prerender: {
-      failOnError: false,
-    },
-  },
   app: {
     head: {
       title: 'Integrações - Sua Empresa',
