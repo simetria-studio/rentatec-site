@@ -1,18 +1,11 @@
-import tailwindcss from "@tailwindcss/vite";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@vueuse/motion/nuxt'
-  ],
+  compatibilityDate: '2025-03-19',
+  modules: ['@nuxtjs/tailwindcss', '@vueuse/motion/nuxt'],
   css: ['~/assets/css/main.css'],
   components: {
-    dirs: [
-      '~/components',
-      '~/components/integration'
-    ]
+    dirs: ['~/components', '~/components/integration'],
   },
   app: {
     head: {
@@ -23,23 +16,30 @@ export default defineNuxtConfig({
         {
           hid: 'description',
           name: 'description',
-          content: 'Soluções de integrações personalizadas para seu negócio'
-        }
+          content: 'Soluções de integrações personalizadas para seu negócio',
+        },
       ],
       link: [
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: '/favicon.ico'
+          href: '/favicon.ico',
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
-        }
-      ]
-    }
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+        },
+      ],
+    },
   },
   build: {
-    transpile: ['@heroicons/vue']
-  }
+    transpile: ['@heroicons/vue'],
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      ignore: ['/200.html', '/404.html'],
+    },
+  },
 })
