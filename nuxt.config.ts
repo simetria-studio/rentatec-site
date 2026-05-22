@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const gtmId = process.env.NUXT_PUBLIC_GTM_ID || 'GTM-W4KPND7'
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: '2025-03-19',
@@ -16,7 +18,7 @@ export default defineNuxtConfig({
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W4KPND7');`,
+})(window,document,'script','dataLayer',${JSON.stringify(gtmId)});`,
           tagPosition: 'head',
           tagPriority: -14,
         },
@@ -24,7 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       noscript: [
         {
           innerHTML:
-            '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4KPND7" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
+            `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           tagPosition: 'bodyOpen',
         },
       ],
