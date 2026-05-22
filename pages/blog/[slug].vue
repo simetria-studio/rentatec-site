@@ -131,6 +131,10 @@ function mapPost(p) {
 }
 
 const rendered = computed(() => mdToHtml(post.value?.content || ''))
+
+useHead(() => ({
+  title: post.value?.title ? `${post.value.title} | Rentatec` : 'Blog | Rentatec',
+}))
 </script>
 
 <style>
