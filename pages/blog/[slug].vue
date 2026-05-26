@@ -2,20 +2,20 @@
   <div class="min-h-screen bg-gray-50">
     <NavBar />
 
-    <section class="relative pt-28 pb-16 bg-gradient-to-b from-slate-50 to-white">
+    <section class="relative pt-28 pb-16 bg-gradient-to-b to-white from-slate-50">
       <div class="px-4 mx-auto max-w-3xl sm:px-6 lg:px-8">
-        <NuxtLink to="/blog" class="inline-flex items-center text-blue-600 hover:underline mb-6">
+        <NuxtLink to="/blog" class="inline-flex items-center mb-6 text-blue-600 hover:underline">
           ← Voltar para o Blog
         </NuxtLink>
 
         <article v-if="post" class="p-6 bg-white rounded-2xl shadow">
           <h1 class="mb-4 text-3xl font-bold text-gray-900">{{ post.title }}</h1>
-          <div class="flex items-center justify-between mb-6 text-sm text-gray-500">
+          <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
             <span>{{ post.category || 'Geral' }}</span>
             <span>{{ formatDate(post.createdAt) }} • {{ readTime(post.content) }} min</span>
           </div>
-          <img v-if="post.cover" :src="post.cover" alt="Capa" class="w-full rounded-xl mb-6" />
-          <div class="prose max-w-none">
+          <img v-if="post.cover" :src="post.cover" alt="Capa" class="mb-6 w-full rounded-xl" />
+          <div class="max-w-none prose">
             <div v-html="rendered"></div>
           </div>
         </article>
@@ -34,7 +34,7 @@
 import { useRoute } from 'vue-router'
 import { ref, computed, onMounted } from 'vue'
 
-const API_BASE = 'http://127.0.0.1:8000/api'
+const API_BASE = 'https://blog.rentatec.com.br/api'
 const route = useRoute()
 
 const post = ref(null)

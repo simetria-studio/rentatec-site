@@ -123,7 +123,7 @@
 import { ref, computed, onMounted } from 'vue'
 import BlogPostList from '@/components/BlogPostList.vue'
 
-const API_BASE = 'http://127.0.0.1:8000/api'
+const API_BASE = 'https://blog.rentatec.com.br/api'
 const fallbackCover = 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80'
 
 const allPosts = ref([])
