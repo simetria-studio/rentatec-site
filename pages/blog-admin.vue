@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-50 admin-skin">
     <NavBar />
 
-    <section class="relative pt-32 pb-16 bg-gradient-to-b from-slate-50 via-white to-white">
+    <section class="relative pt-32 pb-16 bg-gradient-to-b via-white to-white from-slate-50">
       <div class="absolute inset-0 pointer-events-none">
         <div class="absolute -top-12 -right-12 w-80 h-80 bg-gradient-to-br rounded-full blur-3xl from-blue-100/50 to-indigo-100/50"></div>
         <div class="absolute -bottom-10 -left-12 w-96 h-96 bg-gradient-to-tr rounded-full blur-3xl from-purple-100/40 to-sky-100/40"></div>
@@ -14,11 +14,11 @@
             <p class="mt-1 text-gray-600">Crie, edite e publique conteúdos com facilidade</p>
           </div>
           <div class="flex items-center space-x-3">
-            <NuxtLink to="/blog" class="inline-flex items-center px-4 py-2 text-gray-700 bg-white rounded-xl shadow hover:bg-gray-50 ring-1 ring-gray-200 transition">
+            <NuxtLink to="/blog" class="inline-flex items-center px-4 py-2 text-gray-700 bg-white rounded-xl ring-1 ring-gray-200 shadow transition hover:bg-gray-50">
               <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 12l4-4m-4 4l4 4"/></svg>
               Ver Blog
             </NuxtLink>
-            <button v-if="isAuthenticated" @click="logout" class="inline-flex items-center px-4 py-2 text-white bg-red-600 rounded-xl shadow hover:bg-red-700 transition">
+            <button v-if="isAuthenticated" @click="logout" class="inline-flex items-center px-4 py-2 text-white bg-red-600 rounded-xl shadow transition hover:bg-red-700">
               <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7"/></svg>
               Sair
             </button>
@@ -32,7 +32,7 @@
           <button @click="adminTab='categories'" :class="tabClass('categories')" class="px-4 py-2 rounded-lg">Categorias</button>
         </div>
 
-        <div v-if="!isAuthenticated" class="p-6 mx-auto max-w-md bg-white rounded-2xl shadow-xl ring-1 ring-gray-200">
+        <div v-if="!isAuthenticated" class="p-6 mx-auto max-w-md bg-white rounded-2xl ring-1 ring-gray-200 shadow-xl">
           <div class="flex items-center mb-4">
             <div class="flex justify-center items-center mr-3 w-10 h-10 text-blue-600 bg-blue-50 rounded-full ring-1 ring-blue-100">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.105-.895-2-2-2s-2 .895-2 2 2 4 2 4 2-2.895 2-4zm0 0V7a4 4 0 10-8 0v4"/></svg>
@@ -51,7 +51,7 @@
               <label class="block mb-1 text-sm text-gray-700">Senha</label>
               <input v-model="password" type="password" class="px-4 py-2 w-full bg-white rounded-xl border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required />
             </div>
-            <button :disabled="loading" type="submit" class="inline-flex justify-center items-center px-4 py-2 w-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow hover:opacity-95 hover:shadow-lg disabled:opacity-60 transition">
+            <button :disabled="loading" type="submit" class="inline-flex justify-center items-center px-4 py-2 w-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow transition hover:opacity-95 hover:shadow-lg disabled:opacity-60">
               <svg v-if="!loading" class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
               {{ loading ? 'Entrando...' : 'Entrar' }}
             </button>
@@ -62,7 +62,7 @@
         <!-- POSTS TAB -->
         <div v-else-if="adminTab==='posts'" class="grid grid-cols-1 gap-8 lg:grid-cols-1">
           <div class="lg:col-span-1">
-            <div class="p-6 bg-white rounded-2xl shadow-xl ring-1 ring-gray-200 lg:sticky lg:top-24">
+            <div class="p-6 bg-white rounded-2xl ring-1 ring-gray-200 shadow-xl lg:sticky lg:top-24">
               <div class="flex justify-between items-center mb-3">
                 <h2 class="text-xl font-semibold text-gray-900">Nova Postagem</h2>
                 <span class="text-xs text-gray-500">{{ user?.name }}</span>
@@ -76,7 +76,7 @@
                     <input v-model="form.slug" @input="validateSlug(form.slug)" type="text" placeholder="meu-primeiro-post" class="px-4 py-2 w-full bg-gray-50 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
                     <div v-if="slugValidation.message" class="mt-1 text-xs" :class="slugValidation.available === true ? 'text-green-600' : slugValidation.available === false ? 'text-red-600' : 'text-gray-500'">
                       <span v-if="slugValidation.checking" class="flex items-center">
-                        <svg class="animate-spin -ml-1 mr-1 h-3 w-3 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg class="mr-1 -ml-1 w-3 h-3 text-gray-500 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -116,7 +116,7 @@
                 <div>
                   <label class="block mb-1 text-sm text-gray-700">Capa do post</label>
                   <div 
-                    class="flex flex-col items-center justify-center px-4 py-8 w-full text-center bg-white rounded-xl border border-dashed border-gray-300 hover:border-blue-400 transition cursor-pointer"
+                    class="flex flex-col justify-center items-center px-4 py-8 w-full text-center bg-white rounded-xl border border-gray-300 border-dashed transition cursor-pointer hover:border-blue-400"
                     @click="openFile"
                     @dragover.prevent
                     @drop="handleDrop"
@@ -152,7 +152,7 @@
                   <p class="mt-1 text-xs text-gray-400">Dicas: use markdown para formatação. Ex.: **negrito**, *itálico*, listas, títulos, links.</p>
                 </div>
                 <div class="flex justify-between items-center">
-                <button type="submit" :disabled="saving" class="inline-flex items-center px-4 py-2 text-white bg-green-600 rounded-xl shadow hover:bg-green-700 hover:shadow-lg transition disabled:opacity-60">
+                <button type="submit" :disabled="saving" class="inline-flex items-center px-4 py-2 text-white bg-green-600 rounded-xl shadow transition hover:bg-green-700 hover:shadow-lg disabled:opacity-60">
                     <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     {{ form.id ? (saving ? 'Atualizando...' : 'Atualizar') : (saving ? 'Publicando...' : 'Publicar') }}
                   </button>
@@ -176,7 +176,7 @@
 
         <!-- LIST TAB -->
         <div v-else-if="adminTab==='list'" class="grid grid-cols-1 gap-8 lg:grid-cols-1">
-          <div class="relative z-10 p-6 bg-white rounded-2xl shadow-xl ring-1 ring-gray-200">
+          <div class="relative z-10 p-6 bg-white rounded-2xl ring-1 ring-gray-200 shadow-xl">
             <div class="flex flex-col gap-3 mb-4 sm:flex-row sm:items-end sm:justify-between">
               <div class="grid grid-cols-1 gap-3 w-full sm:grid-cols-3 sm:items-end">
                 <div>
@@ -196,7 +196,7 @@
                 </div>
               </div>
               <div class="flex gap-2">
-                <button @click="loadPosts" class="inline-flex items-center px-4 py-2 text-white bg-blue-600 rounded-xl shadow hover:bg-blue-700 hover:shadow-lg transition">
+                <button @click="loadPosts" class="inline-flex items-center px-4 py-2 text-white bg-blue-600 rounded-xl shadow transition hover:bg-blue-700 hover:shadow-lg">
                   <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582M20 20v-5h-.581M5 9c2.5 0 4-4 7-4s4.5 4 7 4M5 15c2.5 0 4 4 7 4s4.5-4 7-4"/></svg>
                   Atualizar
                 </button>
@@ -218,11 +218,11 @@
                     <p class="mt-1 text-xs text-gray-400">{{ formatDate(p.published_at || p.created_at || p.createdAt) }}</p>
                   </div>
                   <div class="flex items-center ml-4 space-x-2">
-                    <button @click="editPost(p)" class="inline-flex items-center px-3 py-1 text-white bg-indigo-600 rounded-lg shadow hover:bg-indigo-700 hover:shadow-lg transition">
+                    <button @click="editPost(p)" class="inline-flex items-center px-3 py-1 text-white bg-indigo-600 rounded-lg shadow transition hover:bg-indigo-700 hover:shadow-lg">
                       <svg class="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5h2m-1 14v-4m0-10l7 7-7 7-7-7 7-7z"/></svg>
                       Editar
                     </button>
-                    <button @click="removePost(p.id)" class="inline-flex items-center px-3 py-1 text-white bg-red-600 rounded-lg shadow hover:bg-red-700 hover:shadow-lg transition">
+                    <button @click="removePost(p.id)" class="inline-flex items-center px-3 py-1 text-white bg-red-600 rounded-lg shadow transition hover:bg-red-700 hover:shadow-lg">
                       <svg class="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2m-9 0h10"/></svg>
                       Excluir
                     </button>
@@ -236,7 +236,7 @@
 
         <!-- CATEGORIES TAB -->
         <div v-else-if="adminTab==='categories'" class="grid grid-cols-1 gap-8 lg:grid-cols-1">
-          <div class="p-6 bg-white rounded-2xl shadow-xl ring-1 ring-gray-200">
+          <div class="p-6 bg-white rounded-2xl ring-1 ring-gray-200 shadow-xl">
             <div class="flex justify-between items-center mb-4">
               <h2 class="text-xl font-semibold text-gray-900">Categorias</h2>
             </div>
@@ -248,7 +248,7 @@
                 <input v-model="categoryForm.description" type="text" placeholder="Descrição" class="px-4 py-2 w-full bg-white rounded-xl border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
               </div>
               <div class="flex justify-end sm:col-span-3">
-                <button :disabled="savingCategory" type="submit" class="inline-flex items-center px-4 py-2 text-white bg-blue-600 rounded-xl shadow hover:bg-blue-700 hover:shadow-lg transition disabled:opacity-60">
+                <button :disabled="savingCategory" type="submit" class="inline-flex items-center px-4 py-2 text-white bg-blue-600 rounded-xl shadow transition hover:bg-blue-700 hover:shadow-lg disabled:opacity-60">
                   <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                   {{ savingCategory ? 'Criando...' : 'Criar categoria' }}
                 </button>
@@ -261,7 +261,7 @@
                   <p class="font-medium text-gray-900">{{ c.name }}</p>
                   <p class="text-xs text-gray-500">/{{ c.slug }} — {{ c.description }}</p>
                 </div>
-                <button @click="removeCategory(c.id)" class="px-3 py-1 text-sm text-white bg-red-600 rounded-lg shadow hover:bg-red-700 hover:shadow-lg transition">Excluir</button>
+                <button @click="removeCategory(c.id)" class="px-3 py-1 text-sm text-white bg-red-600 rounded-lg shadow transition hover:bg-red-700 hover:shadow-lg">Excluir</button>
               </li>
             </ul>
           </div>
@@ -276,7 +276,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref, computed } from 'vue'
 
-const API_BASE = 'http://127.0.0.1:8000/api'
+const API_BASE = 'https://blog.rentatec.com.br/api'
 const BLOG_AUTH_KEY = 'rentatec_blog_auth'
 const BLOG_USER_KEY = 'rentatec_blog_user'
 
