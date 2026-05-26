@@ -135,21 +135,9 @@
                   </div>
                 </div>
                 <div>
-                  <label class="block mb-2 text-sm text-gray-700">Conteúdo (Markdown)</label>
-                  <!-- Toolbar -->
-                <div class="flex flex-wrap gap-1.5 mb-2">
-                  <button type="button" @click="mdH1" class="px-2 py-1 text-sm bg-white rounded-lg border border-gray-200 hover:bg-gray-50">H1</button>
-                    <button type="button" @click="mdH2" class="px-2 py-1 text-sm bg-white rounded border border-gray-200 hover:bg-gray-50">H2</button>
-                  <button type="button" @click="mdBold" class="px-2 py-1 text-sm bg-white rounded-lg border border-gray-200 hover:bg-gray-50"><strong>B</strong></button>
-                  <button type="button" @click="mdItalic" class="px-2 py-1 text-sm bg-white rounded-lg border border-gray-200 hover:bg-gray-50"><em>I</em></button>
-                    <button type="button" @click="mdQuote" class="px-2 py-1 text-sm bg-white rounded border border-gray-200 hover:bg-gray-50">“”</button>
-                    <button type="button" @click="mdCode" class="px-2 py-1 text-sm bg-white rounded border border-gray-200 hover:bg-gray-50">Code</button>
-                    <button type="button" @click="mdLink" class="px-2 py-1 text-sm bg-white rounded border border-gray-200 hover:bg-gray-50">Link</button>
-                    <button type="button" @click="mdUl" class="px-2 py-1 text-sm bg-white rounded border border-gray-200 hover:bg-gray-50">• Lista</button>
-                    <button type="button" @click="mdOl" class="px-2 py-1 text-sm bg-white rounded border border-gray-200 hover:bg-gray-50">1. Lista</button>
-                  </div>
-                <textarea ref="contentEl" v-model="form.content" rows="12" class="px-4 py-3 w-full font-mono text-sm bg-white rounded-xl border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="# Título\n\nEscreva seu conteúdo em Markdown..." />
-                  <p class="mt-1 text-xs text-gray-400">Dicas: use markdown para formatação. Ex.: **negrito**, *itálico*, listas, títulos, links.</p>
+                  <label class="block mb-2 text-sm text-gray-700">Conteúdo</label>
+                  <BlogContentEditor v-model="form.content" />
+                  <p class="mt-1 text-xs text-gray-400">Editor completo: títulos, formatação, listas, links, imagens, tabelas e citações.</p>
                 </div>
                 <div class="flex justify-between items-center">
                 <button type="submit" :disabled="saving" class="inline-flex items-center px-4 py-2 text-white bg-green-600 rounded-xl shadow transition hover:bg-green-700 hover:shadow-lg disabled:opacity-60">
@@ -276,7 +264,24 @@
 <script setup>
 import { onMounted, onUnmounted, ref, computed } from 'vue'
 
-const API_BASE = 'https://blog.rentatec.com.br/api'
+definePageMeta({ ssr: false })
+
+function resolveApiBase() {
+  const localApi = 'http://localhost:8000/api'
+  const productionApi = 'https://blog.rentatec.com.br/api'
+
+  // Use local API while developing/testing locally.
+  if (import.meta.dev) return localApi
+
+  if (typeof window !== 'undefined') {
+    const host = window.location.hostname
+    if (host === 'localhost' || host === '127.0.0.1') return localApi
+  }
+
+  return productionApi
+}
+
+const API_BASE = resolveApiBase()
 const BLOG_AUTH_KEY = 'rentatec_blog_auth'
 const BLOG_USER_KEY = 'rentatec_blog_user'
 
@@ -588,7 +593,7 @@ async function createOrUpdatePost() {
   const sanitizedSlug = sanitizeSlug(form.value.slug)
   const sanitizedTitle = sanitizeInput(form.value.title)
   const sanitizedExcerpt = sanitizeInput(form.value.excerpt)
-  const sanitizedContent = sanitizeInput(form.value.content)
+  const sanitizedContent = sanitizeHtmlContent(form.value.content)
   
   if (!sanitizedSlug || !sanitizedTitle) {
     alert('Slug e Título são obrigatórios')
@@ -680,19 +685,6 @@ async function removePost(id) {
   }
 }
 
-function mdToHtml(text) {
-  if (!text) return ''
-  let html = text
-  html = html.replace(/^# (.*$)/gim, '<h3>$1</h3>')
-  html = html.replace(/^## (.*$)/gim, '<h4>$1</h4>')
-  html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-  html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>')
-  html = html.replace(/`([^`]+)`/gim, '<code>$1</code>')
-  html = html.replace(/\n\n/g, '</p><p>')
-  html = `<p>${html}</p>`
-  return html
-}
-
 function formatDate(date) {
   if (!date) return ''
   const d = new Date(date)
@@ -714,57 +706,7 @@ function badgeFor(p) {
   return 'bg-gray-600'
 }
 
-const previewHtml = computed(() => mdToHtml(form.value.content || ''))
-
-// --- Markdown editor helpers
-const contentEl = ref(null)
-
-function wrapSelection(prefix, suffix = prefix) {
-  const el = contentEl.value
-  if (!el) return
-  const start = el.selectionStart || 0
-  const end = el.selectionEnd || 0
-  const text = form.value.content || ''
-  const before = text.slice(0, start)
-  const selected = text.slice(start, end)
-  const after = text.slice(end)
-  form.value.content = `${before}${prefix}${selected || 'texto'}${suffix}${after}`
-  nextTickCaret(el, start + prefix.length, start + prefix.length + (selected || 'texto').length)
-}
-
-function linePrefix(prefix) {
-  const el = contentEl.value
-  if (!el) return
-  const start = el.selectionStart || 0
-  const end = el.selectionEnd || 0
-  const text = form.value.content || ''
-  const before = text.slice(0, start)
-  const selected = text.slice(start, end)
-  const after = text.slice(end)
-  const chunk = (selected || 'item')
-    .split('\n')
-    .map(line => (line ? `${prefix}${line}` : prefix.trim()))
-    .join('\n')
-  form.value.content = `${before}${chunk}${after}`
-  nextTickCaret(el, start + prefix.length, start + prefix.length + chunk.length)
-}
-
-function nextTickCaret(el, start, end) {
-  requestAnimationFrame(() => {
-    el.focus()
-    el.setSelectionRange(start, end)
-  })
-}
-
-function mdBold() { wrapSelection('**') }
-function mdItalic() { wrapSelection('*') }
-function mdCode() { wrapSelection('`') }
-function mdQuote() { linePrefix('> ') }
-function mdH1() { linePrefix('# ') }
-function mdH2() { linePrefix('## ') }
-function mdUl() { linePrefix('- ') }
-function mdOl() { linePrefix('1. ') }
-function mdLink() { wrapSelection('[', '](https://)') }
+const previewHtml = computed(() => form.value.content || '')
 
 function normalizeImage(src) {
   if (!src) return ''
@@ -788,11 +730,20 @@ function normalizeImage(src) {
 function sanitizeInput(input) {
   if (!input) return ''
   return String(input)
-    .replace(/[<>]/g, '') // Remove < and >
-    .replace(/javascript:/gi, '') // Remove javascript: protocol
-    .replace(/on\w+=/gi, '') // Remove event handlers
+    .replace(/[<>]/g, '')
+    .replace(/javascript:/gi, '')
+    .replace(/on\w+=/gi, '')
     .trim()
-    .slice(0, 1000) // Limit length
+    .slice(0, 1000)
+}
+
+function sanitizeHtmlContent(input) {
+  if (!input) return ''
+  return String(input)
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/javascript:/gi, '')
+    .replace(/on\w+\s*=/gi, '')
+    .trim()
 }
 
 function sanitizeSlug(input) {
@@ -937,4 +888,13 @@ async function validateSlug(slug) {
   padding: 2px 8px;
   font-size: 12px;
 }
+
+.admin-skin .prose h2 { font-size: 1.5rem; font-weight: 700; margin: 1rem 0; }
+.admin-skin .prose h3 { font-size: 1.25rem; font-weight: 600; margin: 0.75rem 0; }
+.admin-skin .prose h4 { font-size: 1.125rem; font-weight: 600; margin: 0.75rem 0; }
+.admin-skin .prose p { color: #374151; margin-bottom: 1rem; }
+.admin-skin .prose ul, .admin-skin .prose ol { margin: 0 0 1rem 1.25rem; color: #374151; }
+.admin-skin .prose blockquote { border-left: 4px solid #d1d5db; padding-left: 1rem; color: #4b5563; margin-bottom: 1rem; }
+.admin-skin .prose a { color: #2563eb; text-decoration: underline; }
+.admin-skin .prose code { background: #f3f4f6; padding: 0.1rem 0.3rem; border-radius: 0.25rem; }
 </style>

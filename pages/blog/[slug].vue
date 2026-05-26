@@ -130,7 +130,13 @@ function mapPost(p) {
   }
 }
 
-const rendered = computed(() => mdToHtml(post.value?.content || ''))
+function renderContent(text) {
+  if (!text) return ''
+  if (/<[a-z][\s\S]*>/i.test(text)) return text
+  return mdToHtml(text)
+}
+
+const rendered = computed(() => renderContent(post.value?.content || ''))
 
 useHead(() => ({
   title: post.value?.title ? `${post.value.title} | Rentatec` : 'Blog | Rentatec',
@@ -138,8 +144,18 @@ useHead(() => ({
 </script>
 
 <style>
+.prose h1 { font-size: 1.875rem; font-weight: 700; margin: 1rem 0; }
 .prose h2 { font-size: 1.5rem; font-weight: 700; margin: 1rem 0; }
 .prose h3 { font-size: 1.25rem; font-weight: 600; margin: 0.75rem 0; }
+.prose h4 { font-size: 1.125rem; font-weight: 600; margin: 0.75rem 0; }
 .prose p { color: #374151; margin-bottom: 1rem; }
+.prose ul, .prose ol { margin: 0 0 1rem 1.25rem; color: #374151; }
+.prose blockquote { border-left: 4px solid #d1d5db; padding-left: 1rem; color: #4b5563; margin-bottom: 1rem; }
+.prose a { color: #2563eb; text-decoration: underline; }
 .prose code { background: #f3f4f6; padding: 0.1rem 0.3rem; border-radius: 0.25rem; }
+.prose pre { background: #f3f4f6; border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem 1rem; overflow-x: auto; }
+.prose img { border-radius: 0.75rem; margin-bottom: 1rem; max-width: 100%; }
+.prose table { border-collapse: collapse; margin-bottom: 1rem; width: 100%; }
+.prose th, .prose td { border: 1px solid #d1d5db; padding: 0.5rem; }
+.prose th { background: #f9fafb; font-weight: 600; }
 </style> 
