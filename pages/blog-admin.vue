@@ -315,6 +315,7 @@ function nowLocalIsoMinute() {
 const form = ref({ id: null, slug: '', title: '', excerpt: '', content: '', category_id: '', published: true, published_at: nowLocalIsoMinute(), image_path: '' })
 const imagePreview = ref('')
 const fileEl = ref(null)
+const imageTouched = ref(false)
 
 const posts = ref([])
 const loadingPosts = ref(false)
@@ -515,6 +516,8 @@ function logout() {
 function resetForm() {
   form.value = { id: null, slug: '', title: '', excerpt: '', content: '', category_id: '', published: true, published_at: nowLocalIsoMinute(), image_path: '' }
   imagePreview.value = ''
+  imageTouched.value = false
+  if (fileEl.value) fileEl.value.value = ''
 }
 
 function onPickImage(e) {
@@ -541,6 +544,8 @@ function onPickImage(e) {
     // Keep full data URL in preview; send exactly what API expects in image_path
     imagePreview.value = result
     form.value.image_path = result.startsWith('data:') ? result : `data:image/jpeg;base64,${result}`
+    imageTouched.value = true
+    if (e?.target) e.target.value = ''
   }
   reader.readAsDataURL(file)
 }
@@ -574,6 +579,7 @@ function handleDrop(ev) {
     const result = String(reader.result || '')
     imagePreview.value = result
     form.value.image_path = result.startsWith('data:') ? result : `data:image/jpeg;base64,${result}`
+    imageTouched.value = true
   }
   reader.readAsDataURL(file)
 }
@@ -581,6 +587,8 @@ function handleDrop(ev) {
 function removeImage() {
   imagePreview.value = ''
   form.value.image_path = ''
+  imageTouched.value = true
+  if (fileEl.value) fileEl.value.value = ''
 }
 
 async function createOrUpdatePost() {
@@ -618,8 +626,9 @@ async function createOrUpdatePost() {
       published: !!form.value.published,
       published_at: form.value.published_at || null
     }
-    if (form.value.image_path) payload.image_path = form.value.image_path
     if (form.value.id) {
+      // Always send image field when cover changed (new image or removed image).
+      if (imageTouched.value) payload.image_path = form.value.image_path || null
       const res = await fetch(`${API_BASE}/posts/${form.value.id}`, {
         method: 'PUT',
         headers: authHeaders(),
@@ -627,6 +636,7 @@ async function createOrUpdatePost() {
       })
       if (!res.ok) throw new Error('Falha ao atualizar post')
     } else {
+      if (form.value.image_path) payload.image_path = form.value.image_path
       const res = await fetch(`${API_BASE}/posts`, {
         method: 'POST',
         headers: authHeaders(),
@@ -665,6 +675,7 @@ async function editPost(p) {
       image_path: ''
     }
     imagePreview.value = normalizeImage(item.image_path || item.image_url || item.image || item.cover || '')
+    imageTouched.value = false
     window.scrollTo({ top: 0, behavior: 'smooth' })
   } catch (e) {
     alert(e.message || 'Erro ao carregar post')
