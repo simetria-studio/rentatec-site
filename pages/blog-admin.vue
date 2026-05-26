@@ -626,9 +626,18 @@ async function createOrUpdatePost() {
       published: !!form.value.published,
       published_at: form.value.published_at || null
     }
+    const attachImageFields = (target, value) => {
+      target.image_path = value
+      // Compatibility aliases for backends that validate different keys.
+      target.image = value
+      target.cover = value
+    }
+
     if (form.value.id) {
-      // Always send image field when cover changed (new image or removed image).
-      if (imageTouched.value) payload.image_path = form.value.image_path || null
+      // On update, only send image fields if user changed cover.
+      if (imageTouched.value) {
+        attachImageFields(payload, form.value.image_path || null)
+      }
       const res = await fetch(`${API_BASE}/posts/${form.value.id}`, {
         method: 'PUT',
         headers: authHeaders(),
@@ -636,7 +645,9 @@ async function createOrUpdatePost() {
       })
       if (!res.ok) throw new Error('Falha ao atualizar post')
     } else {
-      if (form.value.image_path) payload.image_path = form.value.image_path
+      if (form.value.image_path) {
+        attachImageFields(payload, form.value.image_path)
+      }
       const res = await fetch(`${API_BASE}/posts`, {
         method: 'POST',
         headers: authHeaders(),
