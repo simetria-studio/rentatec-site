@@ -33,7 +33,8 @@
       <span class="mx-1 w-px h-7 bg-gray-200"></span>
 
       <button type="button" :class="btnClass('link')" title="Inserir link" @click="setLink">Link</button>
-      <button type="button" class="px-2 py-1 text-sm bg-white rounded-lg border border-gray-200 hover:bg-gray-100" title="Inserir imagem" @click="setImage">Imagem</button>
+      <button type="button" class="px-2 py-1 text-sm bg-white rounded-lg border border-gray-200 hover:bg-gray-100" title="Enviar imagem do computador" @click="pickImage">Imagem</button>
+      <input ref="imageInputEl" type="file" accept="image/*" class="hidden" @change="onImageFileSelected" />
       <button type="button" class="px-2 py-1 text-sm bg-white rounded-lg border border-gray-200 hover:bg-gray-100" title="Inserir tabela" @click="insertTable">Tabela</button>
       <button type="button" class="px-2 py-1 text-sm bg-white rounded-lg border border-gray-200 hover:bg-gray-100" title="Linha horizontal" @click="editor.chain().focus().setHorizontalRule().run()">—</button>
 
@@ -48,7 +49,7 @@
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, watch } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { EditorContent, useEditor } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 import Link from '@tiptap/extension-link'
@@ -66,6 +67,58 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['update:modelValue'])
+
+const imageInputEl = ref(null)
+const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif']
+const MAX_IMAGE_SIZE = 5 * 1024 * 1024
+
+function validateImageFile(file) {
+  if (!file) return 'Arquivo inválido.'
+  if (!ALLOWED_IMAGE_TYPES.includes(file.type)) {
+    return 'Use apenas JPG, PNG, WEBP ou GIF.'
+  }
+  if (file.size > MAX_IMAGE_SIZE) {
+    return 'Imagem muito grande. Máximo 5MB.'
+  }
+  return ''
+}
+
+function readImageAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(String(reader.result || ''))
+    reader.onerror = () => reject(new Error('Falha ao ler imagem'))
+    reader.readAsDataURL(file)
+  })
+}
+
+function insertImageFromFile(file) {
+  const error = validateImageFile(file)
+  if (error) {
+    alert(error)
+    return
+  }
+  readImageAsDataUrl(file)
+    .then((src) => {
+      if (!editor.value || !src) return
+      editor.value.chain().focus().setImage({ src }).run()
+    })
+    .catch(() => alert('Não foi possível inserir a imagem.'))
+}
+
+function insertImageFromClipboardItems(items) {
+  if (!items) return false
+  for (const item of items) {
+    if (item.type?.startsWith('image/')) {
+      const file = item.getAsFile()
+      if (file) {
+        insertImageFromFile(file)
+        return true
+      }
+    }
+  }
+  return false
+}
 
 const editor = useEditor({
   content: props.modelValue || '',
@@ -90,6 +143,23 @@ const editor = useEditor({
   editorProps: {
     attributes: {
       class: 'min-h-[280px] px-4 py-3 focus:outline-none',
+    },
+    handlePaste(view, event) {
+      const items = event.clipboardData?.items
+      if (insertImageFromClipboardItems(items)) {
+        event.preventDefault()
+        return true
+      }
+      return false
+    },
+    handleDrop(view, event) {
+      const files = event.dataTransfer?.files
+      if (!files?.length) return false
+      const file = Array.from(files).find(f => f.type?.startsWith('image/'))
+      if (!file) return false
+      event.preventDefault()
+      insertImageFromFile(file)
+      return true
     },
   },
   onUpdate: ({ editor: instance }) => {
@@ -151,11 +221,14 @@ function setLink() {
   editor.value.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
 }
 
-function setImage() {
-  if (!editor.value) return
-  const url = window.prompt('URL da imagem:')
-  if (!url) return
-  editor.value.chain().focus().setImage({ src: url }).run()
+function pickImage() {
+  imageInputEl.value?.click()
+}
+
+function onImageFileSelected(event) {
+  const file = event.target.files?.[0]
+  if (file) insertImageFromFile(file)
+  if (event.target) event.target.value = ''
 }
 
 function insertTable() {

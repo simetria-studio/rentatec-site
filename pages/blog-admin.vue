@@ -137,7 +137,7 @@
                 <div>
                   <label class="block mb-2 text-sm text-gray-700">Conteúdo</label>
                   <BlogContentEditor v-model="form.content" />
-                  <p class="mt-1 text-xs text-gray-400">Editor completo: títulos, formatação, listas, links, imagens, tabelas e citações.</p>
+                  <p class="mt-1 text-xs text-gray-400">Editor completo: títulos, formatação, listas, links, imagens (upload, colar ou arrastar), tabelas e citações.</p>
                 </div>
                 <div class="flex justify-between items-center">
                 <button type="submit" :disabled="saving" class="inline-flex items-center px-4 py-2 text-white bg-green-600 rounded-xl shadow transition hover:bg-green-700 hover:shadow-lg disabled:opacity-60">
