@@ -312,7 +312,7 @@ function nowLocalIsoMinute() {
   return `${yyyy}-${mm}-${dd}T${hh}:${mi}`
 }
 
-const form = ref({ id: null, slug: '', title: '', excerpt: '', content: '', category_id: '', published: true, published_at: nowLocalIsoMinute(), image_path: '' })
+const form = ref({ id: null, slug: '', title: '', excerpt: '', content: '', category_id: '', published: true, published_at: nowLocalIsoMinute(), image_path: '', image_base64: '' })
 const imagePreview = ref('')
 const fileEl = ref(null)
 const imageTouched = ref(false)
@@ -514,10 +514,18 @@ function logout() {
 }
 
 function resetForm() {
-  form.value = { id: null, slug: '', title: '', excerpt: '', content: '', category_id: '', published: true, published_at: nowLocalIsoMinute(), image_path: '' }
+  form.value = { id: null, slug: '', title: '', excerpt: '', content: '', category_id: '', published: true, published_at: nowLocalIsoMinute(), image_path: '', image_base64: '' }
   imagePreview.value = ''
   imageTouched.value = false
   if (fileEl.value) fileEl.value.value = ''
+}
+
+function extractBase64FromDataUrl(dataUrl) {
+  if (!dataUrl) return ''
+  const str = String(dataUrl)
+  const idx = str.indexOf(',')
+  if (idx >= 0) return str.slice(idx + 1)
+  return str
 }
 
 function onPickImage(e) {
@@ -544,6 +552,7 @@ function onPickImage(e) {
     // Keep full data URL in preview; send exactly what API expects in image_path
     imagePreview.value = result
     form.value.image_path = result.startsWith('data:') ? result : `data:image/jpeg;base64,${result}`
+    form.value.image_base64 = extractBase64FromDataUrl(form.value.image_path)
     imageTouched.value = true
     if (e?.target) e.target.value = ''
   }
@@ -579,6 +588,7 @@ function handleDrop(ev) {
     const result = String(reader.result || '')
     imagePreview.value = result
     form.value.image_path = result.startsWith('data:') ? result : `data:image/jpeg;base64,${result}`
+    form.value.image_base64 = extractBase64FromDataUrl(form.value.image_path)
     imageTouched.value = true
   }
   reader.readAsDataURL(file)
@@ -587,6 +597,7 @@ function handleDrop(ev) {
 function removeImage() {
   imagePreview.value = ''
   form.value.image_path = ''
+  form.value.image_base64 = ''
   imageTouched.value = true
   if (fileEl.value) fileEl.value.value = ''
 }
@@ -626,17 +637,17 @@ async function createOrUpdatePost() {
       published: !!form.value.published,
       published_at: form.value.published_at || null
     }
-    const attachImageFields = (target, value) => {
-      target.image_path = value
-      // Compatibility aliases for backends that validate different keys.
-      target.image = value
-      target.cover = value
-    }
 
     if (form.value.id) {
-      // On update, only send image fields if user changed cover.
+      // On update, only send image payload if cover was changed.
       if (imageTouched.value) {
-        attachImageFields(payload, form.value.image_path || null)
+        if (form.value.image_path) {
+          payload.image_base64 = form.value.image_base64 || extractBase64FromDataUrl(form.value.image_path)
+          payload.remove_image = false
+        } else {
+          // Cover removed
+          payload.remove_image = true
+        }
       }
       const res = await fetch(`${API_BASE}/posts/${form.value.id}`, {
         method: 'PUT',
@@ -645,8 +656,10 @@ async function createOrUpdatePost() {
       })
       if (!res.ok) throw new Error('Falha ao atualizar post')
     } else {
+      // On create, send cover if present.
       if (form.value.image_path) {
-        attachImageFields(payload, form.value.image_path)
+        payload.image_base64 = form.value.image_base64 || extractBase64FromDataUrl(form.value.image_path)
+        payload.remove_image = false
       }
       const res = await fetch(`${API_BASE}/posts`, {
         method: 'POST',
@@ -683,7 +696,8 @@ async function editPost(p) {
       category_id: (item.category_id || item.category?.id) ? String(item.category_id || item.category?.id) : '',
       published: !!item.published,
       published_at: (item.published_at ? item.published_at.toString().slice(0,16) : ''),
-      image_path: ''
+      image_path: '',
+      image_base64: ''
     }
     imagePreview.value = normalizeImage(item.image_path || item.image_url || item.image || item.cover || '')
     imageTouched.value = false
